@@ -39,8 +39,8 @@ ext {
         adDbUsername = 'adsa'
         adDbPassword = '123456'
     } else {
-        adDbName = 'search_engine'
-        adDbUrl = "jdbc:mysql://172.17.1.188:3306/"
+        adDbName = 'chaoshikedb'
+        adDbUrl = "jdbc:mysql://127.0.0.1:3306/"
         adDbUsername = 'root'
         adDbPassword = 'wzg123'
     }

@@ -1,11 +1,9 @@
-sourceCompatibility = 1.5
+//sourceCompatibility = 1.5
 version = '1.0'
 
 buildscript {
     repositories {
-        maven {
-            url 'http://172.17.0.59:8081/nexus/content/groups/public'
-        }
+
 
         mavenCentral()
     }
@@ -56,12 +54,7 @@ allprojects {
     }
 
     repositories {
-        maven {
-            url 'http://172.17.0.59:8081/nexus/content/groups/public'
-        }
-        maven {
-            url 'http://172.17.0.59:8081/nexus/content/repositories/snapshots'
-        }
+
         mavenCentral()
         maven {
             url 'http://oss.sonatype.org/content/repositories/github-releases/'

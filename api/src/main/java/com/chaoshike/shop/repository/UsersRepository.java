@@ -8,9 +8,9 @@ import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
-public interface UserRepository {
+public interface UsersRepository {
 
-    @Select("SELECT * FROM User")
+    @Select("SELECT * FROM Users")
     List<User> All();
 
     @Insert("INSERT INTO [User]" +
