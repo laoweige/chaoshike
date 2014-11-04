@@ -1,0 +1,70 @@
+apply plugin: "jetty"
+apply plugin: "flyway"
+
+dependencies {
+    compile "javax.ws.rs:javax.ws.rs-api:$jasrsVersion"
+    compile "org.glassfish.jersey.core:jersey-common:$jerseyVersion"
+    compile "org.glassfish.jersey.core:jersey-server:$jerseyVersion"
+    compile "org.glassfish.jersey.containers:jersey-container-servlet:$jerseyVersion"
+    compile "org.glassfish.jersey.media:jersey-media-json-jackson:$jerseyVersion"
+    compile "org.glassfish.jersey.connectors:jersey-apache-connector:$jerseyVersion"
+    compile "org.glassfish.jersey.ext:jersey-spring3:$jerseyVersion"
+
+    compile "mysql:mysql-connector-java:$mysqlVersion"
+
+    compile "org.mybatis:mybatis:$myBatisVersion"
+    compile "org.mybatis:mybatis-spring:$myBatisSpringVersion"
+
+    compile "org.codehaus.jackson:jackson-core-asl:$jacksonVersion"
+    compile "org.codehaus.jackson:jackson-mapper-asl:$jacksonVersion"
+    compile 'org.apache.commons:commons-lang3:3.3.2'
+    runtime "cglib:cglib:2.2.2"
+//    runtime fileTree('../lib')
+    runtime "org.apache.commons:commons-dbcp2:2.0.1"
+    testCompile "org.glassfish.jersey.test-framework:jersey-test-framework-core:$jerseyVersion"
+    testCompile "org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-grizzly2:$jerseyVersion"
+    testCompile 'org.flywaydb:flyway-core:3.0'
+    testCompile 'com.h2database:h2:1.4.178'
+}
+
+ext {
+    if (profile.equals("uat")) {
+        adDbName = 'ad_uat'
+        adDbUrl = "jdbc:sqlserver://172.17.0.34:1433;DatabaseName="
+        adDbUsername = 'adsa'
+        adDbPassword = '123456'
+    } else if (profile.equals("mac")) {
+        adDbName = 'ad_mac'
+        adDbUrl = "jdbc:sqlserver://172.17.0.34:1433;DatabaseName="
+        adDbUsername = 'adsa'
+        adDbPassword = '123456'
+    } else {
+        adDbName = 'search_engine'
+        adDbUrl = "jdbc:mysql://172.17.1.188:3306/"
+        adDbUsername = 'root'
+        adDbPassword = 'wzg123'
+    }
+}
+
+jettyRun {
+    httpPort = 8801
+    contextPath = '/'
+}
+
+flyway {
+    url = "$adDbUrl$adDbName?useUnicode=true&characterEncoding=UTF-8"
+    initOnMigrate = true
+    user = adDbUsername
+    password = adDbPassword
+    initVersion = 0
+    outOfOrder = true
+    validateOnMigrate = false
+}
+
+test {
+    exclude 'contact/**'
+}
+
+task contactTest(type: Test) {
+    include 'contact/**'
+}
