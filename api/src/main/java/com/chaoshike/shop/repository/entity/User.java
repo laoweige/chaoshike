@@ -2,9 +2,6 @@ package com.chaoshike.shop.repository.entity;
 
 import java.util.Date;
 
-/**
- * Created by Administrator on 14-11-4.
- */
 public class User {
     private int id;
     private String name;

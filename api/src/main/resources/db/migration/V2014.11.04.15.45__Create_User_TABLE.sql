@@ -1,4 +1,4 @@
-CREATE TABLE User (
+CREATE TABLE Users (
     id INT NOT NULL auto_increment,
     name VARCHAR(50) NOT NULL,
     password VARCHAR(50),
@@ -10,8 +10,18 @@ CREATE TABLE User (
     PRIMARY KEY(id)
 );
 
-INSERT INTO User (name,password,email,mobile,status,createTime,loginTime)
+INSERT INTO Users (name,password,email,mobile,status,createTime,loginTime)
 VALUES('weizhigang','123456','laoweige@163.com','13910178445',0,'2014-10-4','2014-10-4');
 
-INSERT INTO User (name,password,email,mobile,status,createTime,loginTime)
+INSERT INTO Users (name,password,email,mobile,status,createTime,loginTime)
 VALUES('guoxuewen','123456','gexuewen@163.com','13910171111',0,'2014-10-4','2014-10-4');
+
+
+CREATE TABLE Registers (
+    id INT NOT NULL auto_increment,
+    mobile VARCHAR(50) NOT NULL,
+    verifyCode int NOT NULL,
+    expireTime DATE,
+    PRIMARY KEY(id)
+);
+
