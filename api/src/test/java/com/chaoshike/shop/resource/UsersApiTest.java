@@ -1,6 +1,6 @@
 package com.chaoshike.shop.resource;
 
-import com.chaoshike.shop.repository.UsersRepository;
+import com.chaoshike.shop.repository.UserRepository;
 import com.chaoshike.shop.repository.entity.User;
 import com.chaoshike.shop.resource.necessity.ApiTest;
 import com.chaoshike.shop.resource.necessity.TestBeans;
@@ -25,13 +25,13 @@ import static org.hamcrest.CoreMatchers.is;
 public class UsersApiTest extends ApiTest {
 
     @Autowired
-    private UsersRepository usersRepository;
+    private UserRepository userRepository;
 
     @Before
     public void setUp() throws Exception {
 
-        usersRepository = mock(UsersRepository.class);
-        TestBeans.replaceBean("usersRepository", usersRepository);
+        userRepository = mock(UserRepository.class);
+        TestBeans.replaceBean("userRepository", userRepository);
         super.setUp();
     }
 
@@ -45,7 +45,7 @@ public class UsersApiTest extends ApiTest {
 
 
 
-        when(usersRepository.All()).thenReturn(new ArrayList() {{
+        when(userRepository.All()).thenReturn(new ArrayList() {{
             add(new User(2, "wzg", "123456","130111333",0));
             add(new User(1, "zjs", "567890","130111333",0));
         }});

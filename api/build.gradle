@@ -19,6 +19,7 @@ dependencies {
     compile "org.codehaus.jackson:jackson-mapper-asl:$jacksonVersion"
     compile 'org.apache.commons:commons-lang3:3.3.2'
     runtime "cglib:cglib:2.2.2"
+    compile project(':component')
 //    runtime fileTree('../lib')
     runtime "org.apache.commons:commons-dbcp2:2.0.1"
     testCompile "org.glassfish.jersey.test-framework:jersey-test-framework-core:$jerseyVersion"

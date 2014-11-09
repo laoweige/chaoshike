@@ -65,6 +65,7 @@ public class MemoryCache<T> implements ICache<T> {
 	@Override
 	public CacheItem<T> getCacheItem(String key, IEntityFactory<T> dataBuilder, EnumTimeUnit timeUnit) {
 		CacheItem<T> item = cache.get(key);
+
 		if (item == null || TimeHepler.compare(item.getExpiry()) == TimeHepler.EnumCompare.GT) {
 			Object lock = (key + KEY_SUFFIX).intern();
 			synchronized (lock) {
@@ -78,10 +79,12 @@ public class MemoryCache<T> implements ICache<T> {
 								item = new CacheItem<T>(value, timeUnit.addNextTime().getTime());
 							}
 							add(key, item);
+
 						} else {
 							item = new CacheItem<T>(null, timeUnit.addNextTime().getTime());
 						}
 					} catch (ExpiryException e) {
+
 						if (item != null) {
 							item.setExpiry(timeUnit.addNextTime().getTime());
 							value = item.getValue();

@@ -36,7 +36,17 @@
     </bean>
 
     <bean id="userRepository" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface" value="com.chaoshike.shop.repository.UsersRepository"/>
+        <property name="mapperInterface" value="com.chaoshike.shop.repository.UserRepository"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+
+    <bean id="categoryRepository" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.chaoshike.shop.repository.CategoryRepository"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+
+    <bean id="channelRepository" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.chaoshike.shop.repository.ChannelRepository"/>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
 

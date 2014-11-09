@@ -15,6 +15,12 @@ CREATE TABLE Channels (
     PRIMARY KEY(channelId)
 );
 
+INSERT INTO `Channels` (`channelId`, `channelName`, `alias`, `status`, `createTime`)
+VALUES ('3', '粮油、副食、酒水', 'channel1', '0', '2014-11-09');
+INSERT INTO `Channels` (`channelId`, `channelName`, `alias`, `status`, `createTime`)
+VALUES ('4', '母婴、玩具', 'channel2', '0', '2014-11-09');
+
+
 CREATE TABLE Brands (
     brandId INT NOT NULL auto_increment,
     brandName VARCHAR(50) NOT NULL,
@@ -34,6 +40,16 @@ CREATE TABLE Categories (
     createTime DATE,
     PRIMARY KEY(categoryId)
 );
+
+INSERT INTO `Categories` (`channelId`, `categoryName`, `status`, `parentId`, `createTime`)
+VALUES ('1', '饮料冲调', '0', '0', '2014-11-9');
+INSERT INTO `Categories` (`channelId`, `categoryName`, `status`, `parentId`, `createTime`)
+VALUES ('1', '粮油调味', '0', '0', '2014-11-9');
+INSERT INTO `Categories` (`channelId`, `categoryName`, `status`, `parentId`, `createTime`)
+VALUES ('2', '休闲食品', '0', '0', '2014-11-9');
+INSERT INTO `Categories` (`channelId`, `categoryName`, `status`, `parentId`, `createTime`)
+VALUES ('2', '茗茶', '0', '0', '2014-11-9');
+
 
 --INSERT INTO Categories (categoryName,alias,status,createTime)
 --VALUES('食用油','shiyongyou',0,'2014-10-6');

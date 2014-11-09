@@ -18,14 +18,14 @@ import static org.junit.Assert.assertThat;
 @ContextConfiguration(locations = {"classpath:applicationContext.xml", "classpath:applicationContext-test.xml"})
 @TransactionConfiguration(transactionManager = "translationManager", defaultRollback = true)
 @Transactional
-public class UsersRepositoryTest {
+public class UserRepositoryTest {
 
     @Autowired
-    private UsersRepository usersRepository;
+    private UserRepository userRepository;
 
     @Test
     public void testAll() throws Exception {
-        List<User> users = usersRepository.All();
+        List<User> users = userRepository.All();
         System.out.println(users);
         assertThat(users.size(), is(2));
     }

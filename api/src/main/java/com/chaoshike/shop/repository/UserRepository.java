@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
-public interface UsersRepository {
+public interface UserRepository {
 
     @Select("SELECT * FROM Users")
     List<User> All();
