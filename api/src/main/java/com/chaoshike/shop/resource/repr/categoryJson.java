@@ -7,6 +7,12 @@ import java.util.List;
  */
 public class CategoryJson {
 
+    public CategoryJson(int id, String name, int parentId) {
+        this.id = id;
+        this.name = name;
+        this.parentId = parentId;
+    }
+
     private int id;
     private String name;
     private int parentId;
@@ -42,16 +48,7 @@ public class CategoryJson {
 
     private List<CategoryJson> children;
 
-    public CategoryJson(int id, String name, int parentId) {
-        this.id = id;
-        this.name = name;
-        this.parentId = parentId;
-    }
 
-
-
-    public CategoryJson() {
-    }
 
     public int getId() {
 
