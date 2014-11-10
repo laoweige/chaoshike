@@ -6,17 +6,15 @@ import com.chaoshi.cache.MemoryCache;
 import com.chaoshi.util.EnumTimeUnit;
 import com.chaoshike.shop.repository.CategoryRepository;
 import com.chaoshike.shop.repository.ChannelRepository;
-import com.chaoshike.shop.repository.UserRepository;
 import com.chaoshike.shop.repository.entity.Category;
 import com.chaoshike.shop.repository.entity.Channel;
-import com.chaoshike.shop.repository.entity.User;
 import com.chaoshike.shop.resource.repr.CategoryJson;
-import com.chaoshike.shop.resource.repr.UserJson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
@@ -35,50 +33,88 @@ public class CategoriesApi {
     private ChannelRepository channelRepository;
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON +"; charset=utf-8")
+    @Produces(MediaType.APPLICATION_JSON + "; charset=utf-8")
     public List<CategoryJson> all() {
+        return getCategoryTree();
+    }
 
+    @GET
+    @Path("channel-{id}")
+    @Produces(MediaType.APPLICATION_JSON + "; charset=utf-8")
+    public CategoryJson getChannelBy(@PathParam("id") int id) {
+        List<CategoryJson> categories = getCategoryTree();
+        for (CategoryJson channel : categories) {
+            if (channel.getId() == id)
+                return channel;
+        }
+        return null;
+    }
 
-        List<CategoryJson> ChannelCache=cache.get("channels", new IEntityFactory<List<CategoryJson>>(){
+    @GET
+    @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON + "; charset=utf-8")
+    public CategoryJson getCategoryBy(@PathParam("id") int id) {
+        List<CategoryJson> categories = getCategoryTree();
+        for (CategoryJson channel : categories) {
+            if (channel.getChildren() != null) {
+                for (CategoryJson category : channel.getChildren()) {
+                    if (category.getId() == id)
+                        return category;
+                    else {
+                        if (category.getChildren() != null) {
+                            for (CategoryJson subCategory : category.getChildren()) {
+                                if (subCategory.getId() == id)
+                                    return subCategory;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    private List<CategoryJson> getCategoryTree() {
+        List<CategoryJson> ChannelCache = cache.get("channels", new IEntityFactory<List<CategoryJson>>() {
             @Override
             public List<CategoryJson> get(String key) throws ExpiryException {
 
                 System.out.println("从数据库读取数据");
-                List<Channel> channels =  channelRepository.All();
+                List<Channel> channels = channelRepository.All();
                 List<Category> categories = categoryRepository.All();
 
                 List<CategoryJson> channelList = new ArrayList<>();
-                for(Channel channel:channels){
-                    CategoryJson cjson = new CategoryJson(channel.getChannelId(),channel.getChannelName(),0);
+                for (Channel channel : channels) {
+                    CategoryJson cjson = new CategoryJson(channel.getChannelId(), channel.getChannelName(), 0);
                     channelList.add(cjson);
                 }
                 List<CategoryJson> categoryList = new ArrayList<>();
                 List<CategoryJson> subCategoryList = new ArrayList<>();
-                for(Category category:categories){
-                    CategoryJson cjson = new CategoryJson(category.getCategoryId(),category.getCategoryName(),category.getParentId());
-                    if(category.getParentId()==0){
+                for (Category category : categories) {
+                    CategoryJson cjson = new CategoryJson(category.getCategoryId(), category.getCategoryName(), category.getParentId());
+                    if (category.getParentId() == 0) {
                         categoryList.add(cjson);
                         cjson.setChannelId(category.getChannelId());
-                    }else{
+                    } else {
                         subCategoryList.add(cjson);
                     }
                 }
 
 
-                for(CategoryJson channel:channelList){
+                for (CategoryJson channel : channelList) {
                     List<CategoryJson> subCategories = new ArrayList<>();
-                    for(CategoryJson category:categoryList){
-                        if(channel.getId()==category.getChannelId()){
+                    for (CategoryJson category : categoryList) {
+                        if (channel.getId() == category.getChannelId()) {
                             subCategories.add(category);
                         }
                     }
                     channel.setChildren(subCategories);
                 }
 
-                for(CategoryJson category:categoryList){
+                for (CategoryJson category : categoryList) {
                     List<CategoryJson> subCategories = new ArrayList<>();
-                    for(CategoryJson subCategory:subCategoryList){
-                        if(category.getId()==subCategory.getParentId()){
+                    for (CategoryJson subCategory : subCategoryList) {
+                        if (category.getId() == subCategory.getParentId()) {
                             subCategories.add(subCategory);
                         }
                     }
