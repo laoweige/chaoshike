@@ -55,6 +55,8 @@ CREATE TABLE Products (
     salePrice FLOAT,
     marketPrice FLOAT,
     repertory   INT,
+    saleNum     INT,
+    commentNum  INT,
     status INT NOT NULL,
     createTime DATE,
     PRIMARY KEY(productId)
