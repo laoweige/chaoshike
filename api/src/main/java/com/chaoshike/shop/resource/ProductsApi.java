@@ -38,7 +38,9 @@ public class ProductsApi {
     public List<ProductJson> search(@QueryParam("channel") int channel,
                                      @QueryParam("category") int category,
                                      @QueryParam("keyword") String keyword,
-                                     @QueryParam("order") String order) {
+                                     @QueryParam("order") String order,
+                                     @QueryParam("page") int page,
+                                     @QueryParam("pageSize") int pageSize) {
 
         Map<String,Object> args = new HashMap<>();
 
@@ -53,6 +55,16 @@ public class ProductsApi {
             args.put("keyword",keyword);
         if(order!=null)
             args.put("order",order);
+
+        if(pageSize!=0)
+            args.put("rows",pageSize);
+
+        if(page!=0) {
+            int start=(page-1)*pageSize;
+            args.put("start", start);
+        }
+
+
 
         List<Product> products = productRepository.query(args);
         List<ProductJson> results = new ArrayList<>();
