@@ -55,6 +55,12 @@
         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
 
+    <bean id="layoutRepository" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.chaoshike.shop.repository.LayoutRepository"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+
+
 
     <!-- 定时器  这个是定时器要调用方法的类 -->
     <!--<bean id="dbSynService" class="com.zhaopin.search.DBDateAccess.DBSynService" />-->

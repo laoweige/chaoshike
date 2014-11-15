@@ -74,7 +74,7 @@ public class CategoriesApi {
         return null;
     }
 
-    private List<CategoryJson> getCategoryTree() {
+    public List<CategoryJson> getCategoryTree() {
         List<CategoryJson> ChannelCache = cache.get("channels", new IEntityFactory<List<CategoryJson>>() {
             @Override
             public List<CategoryJson> get(String key) throws ExpiryException {

@@ -5,6 +5,16 @@ import java.util.Date;
 public class Product {
     private int productId ;
     private int shopId ;
+    private int regionId;
+
+    public int getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(int regionId) {
+        this.regionId = regionId;
+    }
+
     private int channelId;
     private int categoryId;
     private int brandId ;
@@ -118,6 +128,7 @@ public class Product {
         return "Product{" +
                 "productId=" + productId +
                 ", shopId=" + shopId +
+                ", regionId=" + regionId +
                 ", channelId=" + channelId +
                 ", categoryId=" + categoryId +
                 ", brandId=" + brandId +

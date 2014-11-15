@@ -13,5 +13,8 @@ public interface CategoryRepository {
     @Select("SELECT * FROM Categories")
     List<Category> All();
 
+    @Select("SELECT * FROM Categories where parentId>0")
+    List<Category> allSubCategory();
+
 }
 

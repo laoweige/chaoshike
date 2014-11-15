@@ -6,7 +6,26 @@ public class ProductJson {
     private String name;
     private String summary;
     private String image;
+    private int regionId;
+
+    public int getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(int regionId) {
+        this.regionId = regionId;
+    }
+
     private float salePrice;
+    private int category;
+
+    public int getCategory() {
+        return category;
+    }
+
+    public void setCategory(int category) {
+        this.category = category;
+    }
 
     public ProductJson() {
     }
@@ -17,6 +36,17 @@ public class ProductJson {
         this.summary = summary;
         this.image = image;
         this.salePrice = salePrice;
+        this.marketPrice = marketPrice;
+    }
+
+    public ProductJson(int id, String name, String summary, String image, int regionId, float salePrice, int category, float marketPrice) {
+        this.id = id;
+        this.name = name;
+        this.summary = summary;
+        this.image = image;
+        this.regionId = regionId;
+        this.salePrice = salePrice;
+        this.category = category;
         this.marketPrice = marketPrice;
     }
 
@@ -70,4 +100,18 @@ public class ProductJson {
     }
 
     private float marketPrice;
+
+    @Override
+    public String toString() {
+        return "ProductJson{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", summary='" + summary + '\'' +
+                ", image='" + image + '\'' +
+                ", regionId=" + regionId +
+                ", salePrice=" + salePrice +
+                ", category=" + category +
+                ", marketPrice=" + marketPrice +
+                '}';
+    }
 }

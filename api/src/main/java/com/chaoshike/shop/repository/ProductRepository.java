@@ -22,4 +22,8 @@ public interface ProductRepository {
 
     @Select("SELECT * FROM Products where productId=#{id}")
     Product detail(int id);
+
+    @Select("SELECT p.*,sp.regionId FROM Products p join SpecialProducts sp on p.productId=sp.productId" +
+            " where sp.layoutId=#{layoutId} order by regionId")
+    List<Product> specialProducts(int layoutId);
 }
