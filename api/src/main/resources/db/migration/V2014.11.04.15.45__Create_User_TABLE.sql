@@ -13,9 +13,10 @@ CREATE TABLE Users (
 
 INSERT INTO Users (name,password,email,mobile,status,integral,createTime,loginTime)
 VALUES('weizhigang','123456','laoweige@163.com','13910178445',0,0,'2014-10-4','2014-10-4');
-
 INSERT INTO Users (name,password,email,mobile,status,integral,createTime,loginTime)
 VALUES('guoxuewen','123456','gexuewen@163.com','13910171111',0,20,'2014-10-4','2014-10-4');
+
+
 
 
 CREATE TABLE Registers (
@@ -23,6 +24,16 @@ CREATE TABLE Registers (
     mobile VARCHAR(50) NOT NULL,
     verifyCode int NOT NULL,
     expireTime DATE,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE LoginToken(
+    id INT NOT NULL auto_increment,
+    UUID VARCHAR(50) NOT NULL,
+    token VARCHAR(50) NOT NULL,
+    platform int NOT NULL,
+    expireTime DATE,
+    createTime DATE,
     PRIMARY KEY(id)
 );
 

@@ -1,6 +1,10 @@
 package com.chaoshike.shop.resource;
 
 
+import com.chaoshi.cache.ExpiryException;
+import com.chaoshi.cache.IEntityFactory;
+import com.chaoshi.cache.MemoryCache;
+import com.chaoshi.util.EnumTimeUnit;
 import com.chaoshike.shop.repository.CategoryRepository;
 import com.chaoshike.shop.repository.LayoutRepository;
 import com.chaoshike.shop.repository.ProductRepository;
@@ -30,48 +34,82 @@ public class LayoutApi {
     @Autowired
     private LayoutRepository layoutRepository;
 
+    static MemoryCache<LayoutJson> cache = new MemoryCache<>();
+
+    @GET
+    @Path("{id}-app")
+    @Produces(MediaType.APPLICATION_JSON + "; charset=utf-8")
+    public AppLayoutJson getLayoutForAppBy(@PathParam("id") int id) {
+        LayoutJson layout = buildLayout(id);
+        AppLayoutJson appLayout = new AppLayoutJson();
+        appLayout.setName(layout.getName());
+        appLayout.setTopRegion(layout.getTopRegion());
+        appLayout.setRegions(new ArrayList<AppRegionJson>());
+        for(RegionJson region:layout.getRegions()){
+            AppRegionJson arj = new AppRegionJson();
+            arj.setCategories(region.getCategories());
+            arj.setName(region.getName());
+            if(region.getAds().size()>0) {
+                arj.setImagePath(region.getAds().get(0).getImagePath());
+            }
+            appLayout.getRegions().add(arj);
+        }
+        return appLayout;
+    }
+
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON + "; charset=utf-8")
     public LayoutJson getLayoutBy(@PathParam("id") int id) {
-        Layout layout = layoutRepository.getEntity(id);
+        return buildLayout(id);
+    }
 
-        List<LayoutContent> contents = layoutRepository.getContentsBy(id);
-        List<LayoutRegion> regions = layoutRepository.getRegionBy(id);
-        List<Product> products = productRepository.specialProducts(id);
+    private LayoutJson buildLayout(int id) {
+        final int layoutId = id;
+        LayoutJson layoutJson = cache.get("layout_" + id, new IEntityFactory<LayoutJson>() {
+            @Override
+            public LayoutJson get(String key) throws ExpiryException {
 
-        LayoutJson result = new LayoutJson();
-        result.setName(layout.getLayoutName());
-        result.setRegions(new ArrayList<RegionJson>());
 
-        List<ProductJson> pjs = new ArrayList<>();
-        for (Product product : products) {
-            ProductJson pj = new ProductJson(product.getProductId(),
-                    product.getProductName(), product.getSummary(), product.getImagePath(),product.getRegionId(),
-                    product.getSalePrice(), product.getCategoryId(), product.getSalePrice());
-            pjs.add(pj);
-        }
-        System.out.println(pjs);
-        List<ContentJson> cjs = new ArrayList<>();
-        for (LayoutContent content : contents) {
-            ContentJson cjson = new ContentJson(content.getRegionId(), content.getContentType(), content.getKeyword(), content.getUrl(), content.getImagePath());
-            cjs.add(cjson);
-        }
+                Layout layout = layoutRepository.getEntity(layoutId);
+                List<LayoutContent> contents = layoutRepository.getContentsBy(layoutId);
+                List<LayoutRegion> regions = layoutRepository.getRegionBy(layoutId);
+                List<Product> products = productRepository.specialProducts(layoutId);
 
-        for (LayoutRegion region : regions) {
-            RegionJson rj = new RegionJson(region.getRegionId(), region.getRegionName());
-            fullInCategories(rj, convert(region.getCategoryIds()));
-            fullInProducts(rj, pjs);
-            fullInContents(rj, cjs);
-            if (region.getRegionType() == 0) {
-                result.setTopRegion(rj);
-            } else {
-                result.getRegions().add(rj);
+                LayoutJson result = new LayoutJson();
+                result.setName(layout.getLayoutName());
+                result.setRegions(new ArrayList<RegionJson>());
+
+                List<ProductJson> pjs = new ArrayList<>();
+                for (Product product : products) {
+                    ProductJson pj = new ProductJson(product.getProductId(),
+                            product.getProductName(), product.getSummary(), product.getImagePath(), product.getRegionId(),
+                            product.getSalePrice(), product.getCategoryId(), product.getSalePrice());
+                    pjs.add(pj);
+                }
+                System.out.println(pjs);
+                List<ContentJson> cjs = new ArrayList<>();
+                for (LayoutContent content : contents) {
+                    ContentJson cjson = new ContentJson(content.getRegionId(), content.getContentType(), content.getKeyword(), content.getUrl(), content.getImagePath());
+                    cjs.add(cjson);
+                }
+
+                for (LayoutRegion region : regions) {
+                    RegionJson rj = new RegionJson(region.getRegionId(), region.getRegionName());
+                    fullInCategories(rj, convert(region.getCategoryIds()));
+                    fullInProducts(rj, pjs);
+                    fullInContents(rj, cjs);
+                    if (region.getRegionType() == 0) {
+                        result.setTopRegion(rj);
+                    } else {
+                        result.getRegions().add(rj);
+                    }
+                }
+                return result;
             }
-        }
-
-
-        return result;
+        }, EnumTimeUnit.HOUR.adjustInterval(1));
+        return layoutJson;
+        //return result;
     }
 
     private void fullInCategories(RegionJson region, List<Integer> ids) {
