@@ -1,0 +1,111 @@
+.g-mk-status{
+  display: inline-block;
+  height: 18px;
+  line-height: 18px;
+  border-bottom:2px solid #e0e0e0;
+  padding: 0 5px;
+  background-color:#6c96d5;
+  color: #fff;
+  position: relative;
+  .g-mk-triangle{
+    position: absolute;
+    right: -6px;
+    top: 6px;
+    border-width: 3px;
+    border-color: transparent transparent transparent #6c96d5;
+    border-style:dashed dashed dashed solid;
+  }
+}
+
+.status-pay{
+  background-color: #df4f47;
+  .g-mk-triangle{
+    border-color: transparent transparent transparent #df4f47;
+  }
+}
+
+.status-success{
+  background-color: #7bbd3b;
+  .g-mk-triangle{
+    border-color: transparent transparent transparent #7bbd3b;
+  }
+}
+
+.status-waiting{
+  background-color: #ffa105;
+  .g-mk-triangle{
+    border-color: transparent transparent transparent #ffa105;
+  }
+}
+
+.status-cancel{
+  background-color: #999;
+  .g-mk-triangle{
+    border-color: transparent transparent transparent #999;
+  }
+}
+
+.g-mk-triangle{
+  display: inline-block;
+  overflow: hidden;
+  width: 0px;
+  height:0px;
+  font-size:0px;
+  line-height:0;
+  border-width: 3px;
+  border-color: #51a7e9 transparent transparent transparent;
+  border-style:solid dashed dashed dashed;
+}
+
+.g-mk-tooltip{
+  display: inline-block;
+  position: relative;
+  line-height: 18px;
+  background-color: #fff6d4;
+  border: 1px solid #ffcb08;
+  font-size: 12px;
+  padding: 0 5px;
+  vertical-align: middle;
+  color: #333;
+  .tooltip-triangle{
+    position: absolute;
+    z-index: 2;
+    border-width:3px;
+    left: -6px;
+    top: 6px;
+    border-color:transparent #fff6d4 transparent transparent;
+    border-style:dashed solid dashed dashed;
+  }
+  .tooltip-triangle-back{
+    position: absolute;
+    z-index: 1;
+    border-width:4px;
+    left: -8px;
+    top: 5px;
+    border-color:transparent #ffcb08 transparent transparent;
+    border-style:dashed solid dashed dashed;
+  }
+}
+
+.g-mk-discount{
+  display: inline-block;
+  zoom:1;
+  position: relative;
+  background-color:#ff5436;
+  color: #fff;
+  padding:0 2px;
+  line-height: 16px;
+  font-weight:400;
+  font-size: 12px;
+  vertical-align: top;
+  border-radius: 2px;
+  .g-mk-triangle{
+    position: absolute;
+    left: 3px;
+    top: 16px;
+    border-width:4px 4px 0 0;
+    border-color:#ff5436 transparent transparent transparent;
+    border-style:solid dashed dashed dashed;
+  }
+
+}

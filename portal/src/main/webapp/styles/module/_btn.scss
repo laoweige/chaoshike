@@ -1,0 +1,99 @@
+// lib
+@import "variable";
+// lib
+
+.g-btn{
+  width:auto;
+  vertical-align: middle;
+  display: inline-block;
+  #display: inline;
+  zoom:1;
+  outline: none;
+  border-radius:3px;
+  background-color: #ffa00a;
+  border: 1px solid #de875e;
+  color: #fff;
+  overflow: visible;
+  cursor: pointer;
+
+  padding: 2px 20px;
+  line-height: 22px;
+  font-size: 14px;
+  #width: 1;
+  @include user-select(none);
+  &:hover{
+    text-decoration: none;
+    background-color: #ff8507;
+  }
+}
+
+.btn-primary{
+  background-color: #4094e3;
+  border-color:#2a6194;
+  &:hover{
+    background-color: #3583dd;
+  }
+}
+
+.btn-default{
+  background-color: #f2f2f2;
+  border-color:#c4c2c0;
+  color: #757575;
+  &:hover{
+    background-color: #ececec;
+    border-color:#a9a7a5;
+  }
+}
+
+.btn-success{
+  background-color: #5ab868;
+  border: 1px solid #4aae5a;
+  &:hover{
+    background-color: #5ab868;
+    border-color:#4aae5a;
+  }
+}
+
+.btn-disable{
+  cursor: not-allowed;
+  background-color:#ccc;
+  border: 1px solid #949494;
+  &:hover{
+    background-color: #ccc;
+    border-color:#949494;
+  }
+}
+
+.btn-sm{
+  font-size: 12px;
+  height: 18px;
+  line-height: 18px;
+  padding: 0 5px;
+}
+
+.btn-order{
+  position: relative;
+  overflow: hidden;
+  .fz {
+    position: absolute;
+    display: block;
+    content: ' ';
+    top: -100px;
+    left: -140px;
+    width: 30px;
+    height: 400px;
+    z-index: 2;
+    background: rgba(255, 255, 255, .5);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    pointer-events: none;
+  }
+  &:hover{
+    .fz {
+      -webkit-animation: flash 2s linear infinite;
+      -moz-animation: flash 2s linear infinite;
+      -o-animation: flash 2s linear infinite;
+      animation: flash 2s linear infinite;
+    }
+  }
+}

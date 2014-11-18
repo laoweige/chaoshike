@@ -1,0 +1,52 @@
+// lib
+@import "variable";
+// lib
+
+.g-md-form{
+  zoom:1;
+  li{
+    margin-bottom: 15px;
+  }
+  .book-type{
+    label{
+      margin-right: 30px;
+      cursor: pointer;
+    }
+  }
+}
+.g-md-form:after{display:block;content:"";clear:both;height:0;overflow:hidden;}
+.g-md-form .book-title{
+  width:65px;text-align:right;display:inline-block;vertical-align:middle;
+  font-weight: 400;
+}
+
+
+
+.g-md-switch{
+  margin-bottom: 10px;
+  line-height: 30px;
+  @include clearfix;
+  a{
+    border: 1px solid #dcdfe0;
+    background-color: #f6f5f5;
+    color: #959595;
+    display: inline-block;
+    padding: 0 20px;
+    float: left;
+    &:hover,
+    &.active{
+      background-color: #6bc2df;
+      border: 1px solid #5db9da;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  .switch-left{
+    border-top-left-radius:20px;
+    border-bottom-left-radius:20px;
+  }
+  .switch-right{
+    border-top-right-radius:20px;
+    border-bottom-right-radius:20px;
+  }
+}

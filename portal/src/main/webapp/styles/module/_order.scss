@@ -1,0 +1,333 @@
+// lib
+@import "variable";
+// lib
+
+
+.contact-dialog{
+    .fl{
+        float:left;
+        width:50%;
+    }
+    li{
+        zoom: 1;
+        font-size: 14px;
+        margin-left: 40px;
+        line-height: 25px;
+    }
+    margin-bottom: 15px;
+    .contact-hotline{
+        margin-top: 10px;
+    }
+}
+
+.md-order{
+  .order-hd{
+    position: relative;
+    border-bottom:1px solid #cdcdcd;
+    margin-bottom:10px;
+    background-color: #fff;
+    zoom: 1;
+    h2{
+      font-weight: 400;
+      color: #333;
+      font-size: 24px;
+    }
+    .g-btn{
+      position: absolute;
+      right: 0;
+      top: 10px;
+    }
+  }
+
+  .order-step{
+    position: relative;
+    margin-bottom: 10px;
+    .g-md-btncont{
+      margin-bottom: 0;
+    }
+    .step-title{
+      font-size: 14px;
+      color: #333;
+      margin-bottom:10px;
+    }
+    .step-cont{
+      margin: 0 10px;
+    }
+    .step-num{
+      width: 14px;
+      height: 14px;
+      line-height:13px;
+      #line-height:12px;
+      text-align: center;
+      display: inline-block;
+      background-color: #ff716a;
+      border: 1px solid #fc624d;
+      font-size: 12px;
+      color: #fff;
+      vertical-align: middle;
+      font-weight: 400;
+      margin: -2px 8px 0 0;
+      zoom:1;
+    }
+    .step-action{
+      margin-bottom: 20px;
+      label{
+        font-size: 14px;
+      }
+      .g-md-input{
+        margin-right:15px;
+      }
+    }
+  }
+  .order-price{
+    border-top: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    line-height: 70px;
+    height: 70px;
+    zoom: 1;
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 20px;
+    .price-original{
+      padding-right: 20px;
+    }
+    .promotion-price{
+      font-size: 24px;
+      font-weight:400;
+      color: #333;
+      text-decoration:line-through;
+      margin: 0 4px;
+    }
+    .total-price{
+      font-size: 36px;
+      font-weight: 700;
+      color: #ffa00a;
+      vertical-align:baseline;
+      display: inline-block;
+      margin:0 10px;
+    }
+  }
+
+  .order-submit{
+    zoom: 1;
+    text-align: right;
+    margin-bottom: 20px;
+    .g-btn{
+      margin-left: 10px;
+    }
+  }
+
+  .order-price2{
+    border-top: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    line-height: 70px;
+    height: 70px;
+    zoom: 1;
+    strong{
+      font-size: 24px;
+      font-weight:400;
+      color: #333;
+    }
+  }
+
+  .order-step-0{padding-top: 10px;}
+  .order-step-2{
+    .step-condition,
+    .step-exposure{
+      float: left;  
+    }
+    .step-condition{
+      width: 417px;
+    }
+    .step-exposure{
+      margin-left: 10px;
+      width: 290px;
+      .hd{
+        font-size: 18px;
+        color: #fff;
+        height: 35px;
+        line-height: 35px;
+        padding-left: 10px;
+        background-color:#fff;
+        background-color:#5686d2;
+      }
+      .bd{
+        background-color: #f2f2f2;
+        text-align: center;
+        strong{
+          font-family:"arial,tahoma";
+          line-height:60px;
+          font-size: 60px;
+          font-weight: 700;
+          color: #333;
+          padding: 0 10px;
+          vertical-align:baseline;
+        }
+      }
+      .more{
+        position: absolute;
+        right:0;
+        top:0;
+        color:#fff;
+        height:35px;
+        line-height: 35px;
+        padding:0 10px;
+        background-color: #4371c8;
+        display: inline-block;
+        &:hover{
+          background-color: #3961ad;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .step-condition-item{
+    @include clearfix;
+    font-size: 14px;
+    margin-bottom:20px;
+    line-height: 30px;
+    .condition-label{
+      width: 75px;
+      float: left;
+      color: #666;
+    }
+    .condition-bd{
+      width: 600px;
+      float: left;
+      color: #333;
+      line-height: 30px;
+      zoom: 1;
+      .tips-result{
+        display: none;
+        margin-top: 5px;
+        line-height: 24px;
+      }
+      .tips-result-visible{
+        display: block;
+      }
+
+    }
+    .g-md-time-list{
+      line-height: initial;
+    }
+    .tips-strong{
+      color: #f26522;
+    }
+    .condition-checkbox{
+      vertical-align: middle;
+    }
+    .checkbox-label{
+      cursor: pointer;
+      padding-left:3px;
+      vertical-align: middle;
+    }
+    .label-supplement{
+      color: #f26522;
+      font-size: 12px;
+    }
+
+    .g-mk-discount{
+      right: -6px;
+      top: -13px;
+      position: absolute;
+      z-index: 10;
+    }
+
+
+  }
+  .step-condition-position{
+    margin-bottom: 25px;
+  }
+
+  .order-giveaway{
+    padding-left:5px;
+    .giveaway-label{
+      display: inline-block;
+      #display: inline;
+      zoom: 1;
+      background-color: #ff3c3c;
+      color: #fff;
+      height: 22px;
+      line-height:22px;
+      padding: 0 4px;
+      font-size: 12px;
+      vertical-align: middle;
+    }
+    strong{
+      display: inline-block;
+      #display: inline;
+      zoom: 1;
+      background-color: #ffe893;
+      border: 1px solid #ffcb08;
+      color: #000;
+      font-weight:400;
+      padding:0 4px;
+      font-size: 12px;
+      height: 20px;
+      line-height: 22px;
+      vertical-align: middle;
+    }
+  }
+
+  .order-invoice{
+    border: 1px solid #cdcdcd;
+    background-color: #f2f2f2;
+    margin-top: 5px;
+    display: none;
+    font-size : 12px;
+    zoom:1;
+    overflow: hidden;
+    ul{
+      padding: 10px 10px 5px;
+    }
+    li{
+      margin-bottom: 6px;
+    }
+    label{
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .info-label{
+      text-align: right;
+      font-weight:400;
+      width: 70px;
+      display: inline-block;
+      margin-right: 5px;
+    }
+    .g-md-input{
+      width:240px;
+      height: 24px;
+      line-height: 24px;
+    }
+    .validationMessage{
+      display: inline-block;
+      margin-left: 10px;
+      line-height: 28px;
+      height: 28px;
+      overflow: hidden;
+      vertical-align: middle;
+      width: 150px;
+      padding-left: 10px;
+      background-color: #f2dede;
+      border: 1px solid #ebccd1;
+      color: #a94442;
+    }
+    .invoice-new{
+      border-top: 1px solid #cdcdcd;
+      padding:5px 10px;
+      background-color: #fff;
+      label{
+        color: #315aaa;
+      }
+      span{
+        color: #f26522;
+        margin-left: 32px;
+      }
+    }
+  }
+  .order-invoice-visible{
+    display: block;
+  }
+
+}

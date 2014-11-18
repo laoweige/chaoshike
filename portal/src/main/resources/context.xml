@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+    <mvc:annotation-driven/>
+    <context:property-placeholder location="classpath:config.properties"/>
+    <mvc:view-controller path="/" view-name="index"/>
+    <!--<mvc:interceptors>-->
+        <!--<bean class="com.zhaopin.advertisement.web.authority.AuthorityAnnotationInterceptor"/>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<bean class="com.zhaopin.advertisement.web.interceptor.BaseInterceptor"/>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
+
+
+    <context:component-scan base-package="com.chaoshike.web.controllers"/>
+    <context:component-scan base-package="com.chaoshike.web.services"/>
+    <util:properties id="config" location="classpath:config.properties"/>
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+
+
+    <!--<bean id="simpleMappingExceptionResolver"-->
+          <!--class="com.zhaopin.advertisement.web.resolver.DefaultSimpleMappingExceptionResolver">-->
+        <!--&lt;!&ndash; 定义默认的异常处理页面，当该异常类型的注册时使用 &ndash;&gt;-->
+        <!--<property name="defaultErrorView" value="error"></property>-->
+        <!--&lt;!&ndash; 定义异常处理页面用来获取异常信息的变量名，默认名为exception &ndash;&gt;-->
+        <!--<property name="exceptionAttribute" value="ex"></property>-->
+        <!--&lt;!&ndash; 定义需要特殊处理的异常，用类名或完全路径名作为key，异常也页名作为值 &ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="exceptionMappings">&ndash;&gt;-->
+        <!--&lt;!&ndash;<props>&ndash;&gt;-->
+        <!--&lt;!&ndash;<prop key="cn.basttg.core.exception.BusinessException">error-business</prop>&ndash;&gt;-->
+        <!--&lt;!&ndash;<prop key="cn.basttg.core.exception.ParameterException">error-parameter</prop>&ndash;&gt;-->
+        <!--&lt;!&ndash;&ndash;&gt;-->
+        <!--&lt;!&ndash;这里还可以继续扩展对不同异常类型的处理 &ndash;&gt;-->
+        <!--&lt;!&ndash;</props>&ndash;&gt;-->
+        <!--&lt;!&ndash;</property>&ndash;&gt;-->
+    <!--</bean>-->
+
+</beans>

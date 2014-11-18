@@ -1,0 +1,28 @@
+// lib
+@import "variable";
+// lib
+
+
+.g-icon{
+  display: inline-block;
+  vertical-align: middle;
+  margin: -2px 5px 0 0;
+  #margin-top:2px;
+  overflow: hidden;
+}
+
+
+.g-icon-success{
+  @extend .g-icon;
+  @include background(icon-success,$sprite);
+}
+
+.g-icon-warning{
+  @extend .g-icon;
+  @include background(icon-warning,$sprite);
+}
+
+.g-icon-404{
+  @extend .g-icon;
+  @include background(error-404,$sprite);
+}

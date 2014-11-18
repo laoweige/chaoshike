@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <title>智联推广售卖平台</title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon">
+    <link rel="bookmark" href="favicon.ico" type="image/x-icon">
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <!-- endbuild -->
+
+    <!--[if lt IE 9]>
+    <!-- build:js scripts/ie.js -->
+    <script src="/scripts/ie/es5-shim.js"></script>
+    <script src="/scripts/ie/json3.js"></script>
+    <!-- endbuild -->
+    <![endif]-->
+
+    <!-- build:js scripts/vendor.js -->
+    <script src="/scripts/lib/jquery.js"></script>
+    <script src="/scripts/lib/terrific-2.0.2.js"></script>
+    <script src="/scripts/lib/jQuery.md5.js"></script>
+    <script src="/scripts/lib/knockout-3.1.0.js"></script>
+    <script src="/scripts/lib/handlebars-v1.3.0.js"></script>
+    <script src="/scripts/lib/dialog.js"></script>
+    <script src="/scripts/lib/knockout.validation.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/scripts.js -->
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/module/order.js"></script>
+    <script src="/scripts/module/export-dialog.js"></script>
+    <script src="/scripts/module/order-success-dialog.js"></script>
+    <!-- endbuild -->
+</head>
+<body class="page-order">
+
+
+<div class="g-head">
+    <div class="g-main">
+        <h1 class="logo">
+            <a href=".products.do">智联推广售卖平台</a>
+            <sub>买家版<i class="g-mk-triangle"></i></sub>
+        </h1>
+
+        <div class="ft">
+            <a href="http://zhaopin.com" target="_blank">智联首页</a>
+
+        </div>
+    </div>
+</div>
+
+<div class="g-container">
+    <div class="g-main g-cont">
+        <div class="col_main">
+            <div class="col_main_wrap">
+
+                <div class="g-md-box g-md-tab">
+                    <div class="hd">
+                        <ul>
+                            <li class="tab-index-0"><a href="./../../products.do">产品列表</a></li>
+                            <li class="tab-index-1 active"><a href="./../../orders.do">我的订单</a></li>
+                            <li class="tab-index-2"><a href="#">推广效果</a></li>
+                        </ul>
+                    </div>
+                    <div class="bd">
+
+                        <form method="post" action="./../form.do">
+                            <div class="mod mod-order" data-connectors="status,filtering,special-filtering">
+
+                                <div class="order-hd">
+                                    <h2>新建订单</h2>
+                                    <a href="/orders.do" class="g-btn btn-default btn-sm">取消订单</a>
+                                </div>
+
+                                <div class="order-step order-step-0">
+                                    <h3 class="step-title"><span class="step-num">1</span>推广的产品：</h3>
+
+                                    <div class="step-cont">
+                                        <ul class="mod mod-radio-list g-md-position-list">
+                                            <li class="active">
+                                                <strong class="position-name">
+                                                    搜索页面广告
+                                                </strong>
+                                                <input type="hidden" name="productId" value="2">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="order-step order-step-1">
+                                    <h3 class="step-title"><span class="step-num">2</span>请选择要推广的职位：</h3>
+
+                                    <div class="step-cont">
+                                        <ul class="mod mod-radio-list g-md-position-list">
+
+                                            <li class="position-item">
+                                                <label for="position-CC000001422J90250445001">
+                                                    <input type="radio" checked="selected" name="positionNumber"
+                                                           id="position-CC000001422J90250445001"
+                                                           value="CC000001422J90250445001"/>
+                                                    <strong class="position-name" title="asdfasdftest">
+
+
+                                                        asdfasdftest
+                                                                
+                                                            
+
+
+                                                            <span class="position-condition">
+                                                            （
+                                                            南京
+                                                            销售业务
+                                                            ）
+                                                            </span>
+                                                    </strong>
+
+                                                    <span class="date">到期日：2020-08-25</span>
+                                                </label>
+
+                                                <a href="http://jobs.zhaopin.com/00000142290258551000.htm"
+                                                   class="g-btn  btn-sm more"
+                                                   target="_blank">查看详情</a>
+
+                                            </li>
+
+                                            <li class="position-item">
+                                                <label for="position-CC000001422J90250445002">
+                                                    <input type="radio" checked="selected" name="positionNumber"
+                                                           id="position-CC000001422J90250445002"
+                                                           value="CC000001422J90250445002"/>
+                                                    <strong class="position-name" title="asdfasdftest">
+
+
+                                                        asdfasdftest
+                                                                
+                                                            
+
+
+                                                            <span class="position-condition">
+                                                            （
+                                                            天津
+                                                            销售业务
+                                                            ）
+                                                            </span>
+                                                    </strong>
+
+                                                    <span class="date">到期日：2020-08-25</span>
+                                                </label>
+
+                                                <a href="http://jobs.zhaopin.com/00000142290258550000.htm"
+                                                   class="g-btn  btn-sm more"
+                                                   target="_blank">查看详情</a>
+
+                                            </li>
+
+                                            <li class="position-item">
+                                                <label for="position-CC000001422J90250445003">
+                                                    <input type="radio" checked="selected" name="positionNumber"
+                                                           id="position-CC000001422J90250445003"
+                                                           value="CC000001422J90250445003"/>
+                                                    <strong class="position-name" title="asdfasdftest">
+
+
+                                                        asdfasdftest
+                                                                
+                                                            
+
+
+                                                            <span class="position-condition">
+                                                            （
+                                                            北京
+                                                            销售业务
+                                                            ）
+                                                            </span>
+                                                    </strong>
+
+                                                    <span class="date">到期日：2020-08-25</span>
+                                                </label>
+
+                                                <a href="http://jobs.zhaopin.com/00000142290258549000.htm"
+                                                   class="g-btn  btn-sm more"
+                                                   target="_blank">查看详情</a>
+
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="g-md-btncont">
+
+                                    <a href="./../../products.do" class="g-btn btn-prev">上一步</a>
+                                    <input type="submit" value="下一步" class="g-btn btn-next"/>
+
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col_sub">
+            <div class="g-md-box box-company">
+                <div class="bd">
+                    <div class="g-md-img">
+                        <img src="./../../images/demo1.png" alt=""/>
+                        <i class="img-shadow"></i>
+                    </div>
+                    <h3 class="title">ThoughtWorks</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="g-foot">
+    <div class="g-main">
+        <p>智联介绍 | 网站地图 | 加入智联 | 法律声明 | 保密承诺 | 个人注册 | 联系方式 | 常见问题 | 您对 Zhaopin.com 有任何建议或意见请 联系我们</p>
+
+        <p>未经 zhaopin.com 同意，不得转载本网站之所有招聘信息及作品 智联招聘网版权所有© 1997-2013</p>
+
+        <p>京ICP备12025925号 电信业务审批[2001]字第233号函 京公网安备110105000322</p>
+    </div>
+</div>
+<div style="position: fixed; right: 0; top: 200px;" id="live15"></div>
+
+
+</body>
+</html>

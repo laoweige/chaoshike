@@ -1,0 +1,55 @@
+// lib
+@import "variable";
+// lib
+
+.md-order{
+  .order-price-cs{
+    border-top: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    height: 192px;
+    zoom: 1;
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding: 35px 0 0 10px;
+    input{
+      width: 106px;
+      height: 20px;
+      margin: 0 15px 0 5px;
+      padding: 8px 10px;
+    }
+    .order-remark{
+      padding-top: 15px;
+      margin-left:32px;
+      .content{
+         width: 551px;
+         height: 84px;
+         padding: 10px;
+         vertical-align: top;
+      }
+    }
+  }
+}
+.md-order{
+  .step-condition-item{
+    .condition-label-cs{
+      width: 100px;
+      float: left;
+      color: #666;
+    }
+    .condition-bd-cs{
+      width: 580px;
+      float: left;
+      color: #333;
+      line-height: 30px;
+      zoom: 1;
+      .tips-result{
+        display: none;
+        margin-top: 5px;
+        line-height: 24px;
+      }
+      .tips-result-visible{
+        display: block;
+      }
+    }
+  }
+}

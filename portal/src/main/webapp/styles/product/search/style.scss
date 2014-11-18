@@ -1,0 +1,123 @@
+@charset "UTF-8";
+@mixin background($name,$normal){
+  background-repeat: no-repeat;
+  background-image: sprite-url($normal);
+  background-position: sprite-position($normal,$name);
+  height:image-height(sprite-file($normal, $name));
+  width: image-width(sprite-file($normal, $name));
+}
+
+$search-sprite: sprite-map("product/search/sprite/*.png");
+
+.g-md-box{
+  .hd{
+    position: relative;
+    padding:0 20px;
+    font-weight: 400;
+    .division{
+      padding: 0 5px;
+    }
+    a{
+      font-weight: 700;
+    }
+    .more{
+      position: absolute;
+      right:20px;
+      top: 0;
+      padding: 0 4px;
+      font-weight: normal;
+    }
+  }
+  .bd{
+    padding:15px 20px;
+  }
+}
+
+.g-md-btncont{
+  background-color: #fff;
+  margin-bottom: 0;
+  padding: 10px 0;
+  z-index: 10;
+}
+.sticky-btn{
+  border-top: 1px solid #c1c1c1;
+}
+
+
+.btn{
+  @include background(btn,$search-sprite);
+  display: inline-block;
+  #display: inline;
+  zoom: 1;
+  width: 140px;
+  height: 45px;
+  vertical-align: middle;
+  line-height: 150px;
+  font-size: 0;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover{
+    @include background(btn-hover,$search-sprite);
+  }
+}
+
+.icon-tick{
+  display: inline-block;
+  #display: inline;
+  zoom: 1;
+  width: 14px;
+  height: 14px;
+  overflow: hidden;
+  vertical-align: middle;
+  margin: -2px 5px 0 0;
+  #margin-top: 0;
+  @include background(icon-tick,$search-sprite);
+}
+
+.md-prod-block{
+  margin:20px 0 30px 0;
+  color: #333;
+  .block-title{
+    width: 130px;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+  .block-cont{
+    font-size: 14px;
+    li{
+      margin-bottom: 10px;
+      .hot{
+        @include background(top,$search-sprite);
+        display: inline-block;
+        margin : 0 4px 0 2px;
+        vertical-align: middle;
+      }
+    }
+  }
+  .img-cont{
+    text-align: center;
+    margin-top: 15px;
+  }
+}
+.process-step-1{left:20%;}
+.process-step-2{left:40%;}
+.process-step-3{left:60%;}
+.process-step-4{left:80%;}
+
+.md-prod-block-1{
+  .block-title{
+    @include background(title-01,$search-sprite);
+  }
+}
+
+.md-prod-block-2{
+  .block-title{
+    @include background(title-02,$search-sprite);
+  }
+}
+
+.md-prod-block-3{
+  .block-title{
+    @include background(title-03,$search-sprite);
+  }
+}

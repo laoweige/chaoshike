@@ -1,0 +1,14 @@
+@import "variable";
+// lib
+
+.g-cont{
+  position:relative;
+  overflow: hidden;
+  @include clearfix;
+}
+.g-cont .col_main{float:left;width:100%;}
+.g-cont .col_sub,
+.g-cont .col_ext{float:left;}
+.g-cont .col_main_wrap{margin-right:250px;position:relative;width:740px;}
+
+.g-cont .col_sub{width:238px;margin-left:-240px;}

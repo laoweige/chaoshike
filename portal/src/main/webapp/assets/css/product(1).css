@@ -1,0 +1,319 @@
+@charset "utf-8";
+
+#container{margin-top: 10px; overflow: hidden;}
+#sidebar .section{border:1px solid #ddd;margin-bottom: 10px;}
+#sidebar .sec-t{height:32px;border-bottom: 1px solid #ddd}
+#sidebar .sec-t h3{line-height: 32px;color:#333;text-indent: 8px}
+
+#sidebar .sec-c{overflow: hidden;}
+
+#sidebar .swtich-handle{overflow: hidden;width:202px;}
+#sidebar .switch-hdl{display: block;float:left;width: 99px;height:32px;background: #f1f1f1;line-height: 32px;color:#616161;text-align: center;border-right:1px solid #ddd;border-bottom:1px solid #ddd;}
+#sidebar .switch-hdl.active{background: #fff;border-bottom:0;}
+#sidebar .swtich-pannel{padding:0 10px}
+
+#sidebar .goods-item{padding:15px 0;overflow: hidden;border-bottom:1px dotted #ddd;position: relative;}
+#sidebar .goods-item .thumb{position: absolute;top:15px;left:0px;}
+#sidebar .goods-item .thumb img{display: block;width: 75px;height:75px;display: block;vertical-align: top;}
+#sidebar .goods-item .des{height:75px;margin-left: 87px;}
+#sidebar .goods-item .g-name{font-weight: normal;color:#666;line-height: 18px;height:55px;overflow: hidden;margin:0 0 2px;}
+#sidebar .goods-item .price{font-weight: bold}
+
+#sidebar .goods-item-h{text-align: center;margin:0 11px;border-bottom:1px dotted #ddd;padding:13px 0;}
+#sidebar .goods-item-h .thumb img{width: 150px;height:150px;margin:0 auto;display: block;vertical-align: top;}
+#sidebar .goods-item-h .g-name{color:#666;line-height: 18px;font-weight: normal;margin:5px 0;}
+
+#sidebar .last{border:0;}
+
+
+#topsale .goods-item{position: relative;margin:0 15px;}
+#topsale .goods-item .thumb{display: none;left:9px;}
+#topsale .goods-item .des{margin:0;height:auto;}
+#topsale .goods-item .des .g-name{height:18px;overflow: hidden;margin-left: 24px;}
+#topsale .goods-item .des .price{display: none}
+#topsale .goods-item .index{font-size:11px;position: absolute;top:17px;left:0px;display:block;line-height: 15px;text-align: center;color:#fff;width:15px;height:15px;background: url('http://img.shequ001.com/shequ001_web/www/sprite-product.png') -32px 0px no-repeat;}
+
+#topsale .goods-item.show .thumb{display: block}
+#topsale .goods-item.show .des{margin-left:95px;height:75px;}
+#topsale .goods-item.show .des .g-name{height:55px;margin-left: 0;}
+#topsale .goods-item.show .des .price{display: block}
+#topsale .goods-item.show .index{background-position: 5px 2px;top:-2px;left:-5px;width: 26px;height:24px;}
+
+/*gallery 部分*/
+#main{margin-top: 10px;}
+#sort-bar{margin:20px auto 25px;}
+#col-main{position: relative;}
+#catgory-path{line-height: 26px;position: relative;top:0;left: 0}
+#catgory-path dl{position: relative;}
+#catgory-path dl,#catgory-path .arrow,#catgory-path .now,#catgory-path .label,#catgory-path .link{float:left;}
+#catgory-path .now{padding-left: 16px;}
+#catgory-path .arrow{padding:0 17px;}
+#catgory-path dd{display: none;border:1px solid #ddd; background: #fff;position: absolute;top:28px;left:0px;z-index: 1}
+#catgory-path dd .pop{width: 300px;margin:5px 13px;line-height: 28px;}
+/**
+	add code adam 2014-07-01 start
+*/
+#catgory-path dd .pop a{ display:inline-block;}
+/**
+	add code adam 2014-07-01 over
+*/
+#catgory-path dd .pop a{margin-right: 24px;color:#666;}
+
+#catgory-path dt{display: block;height:26px;padding:0 22px 0 16px;border:1px solid #fff;background: #fff;position: relative;z-index: 3}
+
+#catgory-path .leader dt{padding-left:24px;}
+#catgory-path .leader dt b{position: absolute;top:2px;left:0px;top:9px;left:6px;display:block;width: 11px;height:11px;background: url('http://img.shequ001.com/shequ001_web/www/sprite-product.png') -57px 0 no-repeat;}
+
+
+#catgory-path dt i{position: absolute;top:10px;right:0px;display: block;width: 14px;height:8px;background: url('http://img.shequ001.com/shequ001_web/www/sprite-product.png') -78px 0 no-repeat;}
+#catgory-path .show dt{border-color:#ddd;border-bottom:0;height:28px;}
+#catgory-path .show dd{display: block;}
+
+
+#catgory-path.single{position: relative;overflow: hidden;margin-bottom: 15px;}
+#catgory-path.single .leader{padding-left: 24px;position: relative;}
+#catgory-path.single .leader b{display: block;width: 12px;height:12px;position:absolute;top:8px;left:0;background: url('http://img.shequ001.com/shequ001_web/www/sprite-product.png') -56px 0 no-repeat;}
+
+#catgory-path.single .now{padding-left: 0;}
+
+/* 商品列表筛选器*/
+
+#filter_container .filter-title{display:none }
+#gallery_filter{position: relative;}
+#gallery_filter .filter-more{position: absolute;top:0px;right:10px;}
+#gallery_filter .filter-more a{color:#0066cc;}
+.filter-lists-container .active{background: #4598d2;}
+
+/*商品列表排序条*/
+
+.gallery-sortbar{background: #fafafa;box-shadow: 0px 2px 2px #dedede}
+.gallery-sortbar .gallery-sort{padding:0;}
+.gallery-sortbar .gallery-showmode{padding:0;}
+.mini-pageview .flip{border:0;border-left:1px solid #ddd;padding:0 8px;margin:0;line-height: 33px;color:#666;text-decoration: none}
+.mini-pageview .page-count{margin-right: 5px;}
+.gallery-sortbar .mini-pageview{padding:0;margin:0;color:#999;}
+.gallery-sortbar .mini-pageview .page-current{color:#333;}
+
+.gallery-sortbar .gallery-sort a{border:0;border-right:1px solid #ddd;background: none;margin:0;float:left;}
+.gallery-sortbar .gallery-sort em{padding:0 15px;line-height: 33px;border:0;}
+.gallery-sortbar .gallery-sort .active{border-color: #e4393c;background: #fc5154;color:#fff;}
+.filter-lists-container .filter-entries-more .text{color:#0066cc;}
+
+/*
+20140701
+.gallery-sortbar .sortbar-filter-tags{float:left;clear: none;margin-top: 3px;width: 500px;overflow: hidden;height: 25px}
+*/
+.gallery-sortbar .sortbar-filter-tags{ background:none;float:left;clear: none;margin-top: 3px;width: 500px;overflow: hidden;height: 25px}
+.gallery-sortbar .sortbar-filter-tags label{color:#e4393c;}
+
+#brand-filter-index{line-height: 22px;height:24px;overflow: hidden;margin-bottom: 9px;}
+#brand-filter-index .index-item{position: relative;display:block;float:left;height:22px;padding:0 4px;margin:0 7px 0 0;cursor:pointer;color:#0066cc;}
+#brand-filter-index .active{background: #4598d2;color:#fff;}
+#brand-filter-index .index-item.active i{position: absolute;bottom:-3px;left:0;width:100%;height:4px;background: url('icon-filter-arrow.gif') center 0px no-repeat;}
+#brand-filter-item{padding:3px 9px;border:1px solid #ddd;overflow: hidden;}
+#brand-filter-item {margin-bottom: 7px;}
+#brand-filter-item li{margin:0;padding:0px;display:block;float:left;width:150px;line-height: 24px;}
+#brand-filter-item a{color:#0066cc;}
+
+
+/**
+ * 商品列表main
+ */
+.gallery-grid{margin-bottom: 10px;}
+.gallery-grid .goods-item{padding:0px;}
+.gallery-grid .goods-item .wrap{border:1px solid #fff;}
+.gallery-grid .goods-item .goods-buy{visibility: hidden;border-top:1px solid #ddd;margin:0;height:26px;line-height: 26px;text-align: center;}
+
+.gallery-grid .goods-item.active .wrap{border-color:#ddd;}
+.gallery-grid .goods-item.active .goods-buy{visibility: visible;}
+
+
+.gallery-grid .goods-item .inner{margin:5px;/*height:260px;*/overflow: hidden;}
+
+.gallery-grid .goods-comment{position: relative;padding-left: 20px;line-height: 18px;margin:0;}
+.gallery-grid .goods-comment i{position: absolute;top:3px;left:0px;width:15px;height:15px;background: url('http://img.shequ001.com/shequ001_web/www/sprite-product.png') -120px 0px no-repeat;}
+
+.gallery-grid .goods-others{position: relative;height:20px; line-height:20px;margin-bottom: 5px;}
+.gallery-grid .goods-others .grid-fav{position: absolute;top:0px;right:0px;}
+.gallery-grid .goods-others .grid-fav .has-icon{padding:0;float:none;display: block}
+
+.gallery-grid .goods-info{margin:10px 10px 0;}
+.gallery-grid .goods-price{margin-bottom: 5px;}
+.gallery-grid .goods-price del{display: inline;clear: none}
+.gallery-grid .goods-name a{color:#666;}
+.gallery-grid .goods-action{margin:0 10px;} 
+.gallery-grid .goods-action .seller-name{line-height: 20px;height:20px;font-weight: normal;}
+.gallery-grid .goods-name{height:36px;line-height: 18px;overflow: hidden;margin:0;}
+.gallery-grid .goods-promotion{margin-bottom: 10px;font-weight: normal;color:#e4393c;margin-bottom: 10px;height:20px;overflow: hidden;}
+.goods-buy a.action-addtocart{line-height: 26px; color:#666; display:block; text-decoration: none; background: #eee;}
+.goods-buy a.action-addtocart:hover{ background:#e4393c; color:#fff;text-decoration: none}
+
+.gallery-grid .icon-fav{text-indent:-9999px;position: absolute;top:2px;right:0px;display: block;width: 17px;height:14px;background: url('http://img.shequ001.com/shequ001_web/www/sprite-product.png') -144px 0px no-repeat;}
+.gallery-grid .goods-price{font-size: 14px}
+
+
+.gallery-grid .goods-thumbs{height:42px;overflow: hidden;}
+.gallery-grid .thumb-scroll{position: relative;height: 42px;}
+.gallery-grid .thumb-scroll ul.scroll-pannel{position: absolute;top:0px;left:27px; height:42px;overflow: hidden;}
+.gallery-grid .thumb-scroll .arrow{position: absolute;top:0px;left:0px;display: block;width: 20px;height:40px;background: url('http://img.shequ001.com/shequ001_web/www/sprite-product.png') -167px 9px no-repeat;cursor: pointer;}
+.gallery-grid .thumb-scroll .arrow.right{background-position: -185px 9px;left:auto;right: 0px}
+.gallery-grid .thumb-scroll .small-img{float:left;margin: 0 6px 6px 0;background: #ededed;cursor: pointer;}
+.gallery-grid .thumb-scroll .small-img.active img{border-color:#FC5154;}
+.gallery-grid .thumb-scroll .small-img img{width: 38px;height:38px;border:1px solid #ddd;display: block;vertical-align: top}
+
+/*商品详情页*/
+.goods-leftbox{width: 405px}
+.goods-rightbox{width:770px;overflow: hidden;}
+.goods-info-wrap .goodsname{color:#333;font-size:18px;font-family: 'Microsoft YaHei';font-weight: normal;border:0;}
+.goods-info-wrap .basic-info{border-top:1px solid #ddd;padding: 0;color:#666;}
+.basic-info span, .basic-info b{color:#666;}
+.goods-rightbox #goods-basic{float:left;width: 521px;}
+.goods-rightbox #seller-info{float:right;width: 230px;border:1px solid #ddd;}
+#seller-info .wrap{margin:3px 13px;}
+#seller-info .section{position: relative;overflow: hidden;border-bottom:1px dotted #ddd;padding:12px 0;color:#666;}
+
+#seller-info .labels{height:50px;background: url('http://img.shequ001.com/shequ001_web/www/2.0/2014-05-21/seller-s-label.gif') no-repeat;}
+#seller-info .contact .btn-contact{position: absolute;top:6px;right:0px;padding-left: 25px;background: #FC5154 url('icon-seller-contact.gif') 4px 8px no-repeat;;}
+#seller-info .tips h5{color:#ff6600;margin-bottom: 5px;}
+#seller-info .tips p{line-height: 20px;}
+
+
+#seller-info .paymethod span.item{background: #ccc;border-radius: 2px;line-height: 32px;color: #fff;padding:5px 2px;}
+#seller-info .paymethod span.item.enble{background: #fc5154;}
+
+#seller-info .share{border:0;}
+
+
+#main-info{margin-bottom: 13px;}
+
+.goods-buy-area{padding: 0;border:0;}
+
+.mprice .mprice-tab{width: 450px}
+.mprice .mprice-tab th{padding:0 5px;}
+
+
+.goods-buy-area .btn-buy,.goods-buy-area .btn-notify,.goods-buy-area input.btn-timedbuy-ready{background: #fc5154;line-height: 46px;margin-left: 14px;height:46px;width: 153px;border:1px solid #e4393c;color:#fff;text-indent: 0;font-size: 20px;font-family: "Microsoft YaHei";}
+.goods-buy-area .btn-timedbuy-ready{border:0;}
+ 
+.addcollect .has-icon{margin:7px 7px 0 0;width: 16px;padding:0;background-position: 0px 0px;}
+.addcollect .star-on .has-icon{background-position: 0 -22px} 
+.btnBar .addcollect{margin-left: 18px;} 
+  
+.hightline{border:0;} 
+  
+ 
+.goods-buy-area .Numinput input{font-size:16px;color:#666;line-height: 45px;width: 44px;height:45px;background: #fff;border:1px solid #c8c7cc;}
+
+.goods-buy-area .Numinput{height:auto;;margin:0;width: 69px;position: relative;}
+.goods-buy-area .btnBar li{height:auto;}
+.goods-buy-area .buyinfo{margin:0;}
+.Numinput .numadjust{position: absolute;top:0px;left:45px;display: block;width:24px;height:25px;background-position: -26px 0px;}
+.Numinput .numadjust-arr{margin:0;}
+.Numinput .numadjust.increase{background-position: -26px 0px;}
+.Numinput .numadjust.decrease{position: absolute;top:23px;left:45px;background-position: 0px 0px;}
+
+
+.picscroll .pics{width: 357px}
+
+.goods-detail-pic-thumbnail{height:85px;}
+.goods-detail-pic-thumbnail li{padding:0;width: auto;margin:0 10px 0 0;}
+.goods-detail-pic-thumbnail .uparrow{display: none}
+.goods-detail-pic-thumbnail a{border:1px solid #ddd;}
+.goods-detail-pic-thumbnail a img{border:0;padding:0;margin:2px;}
+
+.goods-detail-pic-thumbnail .current a, .goods-detail-pic-thumbnail .current a:hover{border-color:#FC5154;}
+
+.picscroll .scrollarrow{height:85px;width: 22px}
+
+
+#goods-detail-tab{position: relative;z-index: 999}
+#goodsDetailMain .goods-detail-tab{background-position: 0 38px;}
+
+#goodsDetailMain .goods-detail-tab{height: 42px;}
+#goodsDetailMain .goods-detail-tab ul{overflow: hidden;border: 1px solid #ddd; background: #FAFAFA;width: 980px}
+#goodsDetailMain .goods-detail-tab .active,#goodsDetailMain .goods-detail-tab .active a{background: #fc5154;color:#fff;line-height: 38px;height:38px;font-weight: normal;margin:0;}
+#goodsDetailMain .goods-detail-tab .active{border-color:#e4393c;border-left:1px solid #e4393c;}
+#goodsDetailMain .goods-detail-tab .active em{color:#fff;}
+
+#goodsDetailMain .goods-detail-tab li{border-right:1px solid #ddd;/*border-top:1px solid #ddd;*/}
+#goodsDetailMain .goods-detail-tab li,#goodsDetailMain .goods-detail-tab li a{font-size:14px;margin:0;background: #fafafa;line-height: 38px;height: 38px;font-weight: normal;}
+#goodsDetailMain .goods-detail-tab em{color:#e4393c;}
+
+#goodsDetailMain .goods-detail-tab li a{padding:0 23px 0 0;}
+#goodsDetailMain .goods-detail-tab li{padding:0 0 0 23px;}
+
+.pdtdetail .indent{border:1px solid #ddd;padding:0 20px;}
+.pdtdetail .indent ul{padding:0;}
+.goods-intro-list li{color:#666;}
+
+
+#goodsExtendMain{margin-bottom: 36px;}
+
+#goodsExtendMain .goods-detail-tab{background: url('tabsepbg2.gif') 0px 0px repeat-x;height: 36px}
+#goodsExtendMain .goods-detail-tab ul{border-left:1px solid #ddd;overflow: hidden;}
+#goodsExtendMain .goods-detail-tab li{height: 34px;margin:0;border:1px solid #ddd;border-left:0;background: #fff;font-size:14px;font-weight: normal;}
+
+#goodsExtendMain .goods-detail-tab .goodsDetailTab.active{border-top:2px solid #e4393c;border-bottom:1px solid #fff;}
+
+#goodsExtendMain .goods-detail-tab li a{height: 34px;border:0;background: #fff;font-size:14px;font-weight: normal;}
+.promotion-info{margin:0;border:0;}
+#app_area .pdtdetail{border-color:#ddd;}
+#app_area .pdtdetail .sec-tit{ padding:10px;}
+#app_area .pdtdetail .sec-con{}
+#app_area .pdtdetail .sec-con ul{ padding:10px; text-align:center; overflow:hidden;}
+#app_area .pdtdetail .sec-con ul li{ float:left; padding:0 10px;}
+#app_area .pdtdetail .sec-con ul li a{ font-weight:normal;}
+#app_area .pdtdetail .sec-con ul li a img{ max-height:150px; max-width:150px;}
+.dis-cons-title{border-top:1px solid #E4393C;font-weight: normal;color:#333;}
+
+
+#discuss_box{}
+
+#discuss_box .evalbox-left{float:left;width: 730px}
+
+#discuss_box .evalbox-right{float:right;width:240px;height:133px;}
+
+#discuss_box .evalbox{border:1px solid #ddd;height:133px;overflow: hidden;}
+#discuss_box .eval-total{float:left;width: 215px;height:133px;}
+#discuss_box .eval-total .inner{margin:30px 0 10px 30px;}
+#discuss_box .eval-total .percent{height:40px;line-height: 40px;margin-bottom: 3px;}
+#discuss_box .eval-total .total{line-height: 18px;height:18px;color:#666;}
+#discuss_box .eval-total .percent{color:#fd3d3a;}
+#discuss_box .eval-total .percent .val{font-size:35px;margin-right: 2px;}
+
+
+#discuss_box .eval-level{float:left;width: 280px;padding-top: 10px;}
+#discuss_box .eval-level dl{line-height: 38px;height:38px;margin:0;border:0;color:#666;}
+#discuss_box .eval-level dt{float:left;width: 40px;padding:0;}
+#discuss_box .eval-level span.bar{display: block;width: 130px;margin: 10px 5px 0 0;height:18px;position: relative;float:left}
+#discuss_box .eval-level span.bar span{display:block;background: #ff7777;height:18px;}
+#discuss_box .eval-level dd{float:left;width:200px;padding:0;clear: none}
+
+#discuss_box .eval-action{margin-top: 40px;text-align: center;}
+#discuss_box .eval-action span{display: block;color:#666;margin-bottom: 10px;}
+#discuss_box .consult-content{padding:10px 0;}
+
+
+
+#discuss_content{}
+#discuss_content ul.tabs{border-bottom:1px solid #ddd;line-height: 36px;overflow: hidden;}
+#discuss_content li{float:left;padding:0 5px;color:#666;font-size:14px;line-height: 36px;margin-right: 20px;cursor: pointer;}
+#discuss_content li.active{color:#e4393c;border-bottom:1px solid #e4393c;cursor: default;}
+
+
+#discuss_content dl{position: relative;background: url('bg-comment-line.gif') 75px 0 repeat-y;padding:22px 0 0 100px;border-top:0;margin:0;}
+#discuss_content dt{position: absolute;left:58px;top:22px;padding:0;width:35px;}
+#discuss_content dd{padding:0px 0 10px;position: relative;border-bottom:1px dotted #ddd;}
+#discuss_content dd .date{position: absolute;top:0px;right:0;color:#999;}
+#discuss_content dd .author{font-weight: bold;color:#666;line-height: 35px;}
+#discuss_content dd .star{line-height: 20px;color:#666;}
+#discuss_content dd .content{line-height: 20px;color:#666;}
+#discuss_content dd .relay-box{overflow: hidden;margin:7px 0;}
+#discuss_content dd .relay-box .date{top:9px;right:9px;}
+
+
+#discuss_content span.avatar{display:block;height:35px;width: 35px;background: url('icon-member.gif') 0px 0px no-repeat;}
+#discuss_content span.avatar img{display: block;width: 35px;height: 35px;vertical-align: top}
+#goods-adjunct{border:0;background: #fff;}
+
+#gallery_show{margin-bottom: 40px;overflow: hidden;}

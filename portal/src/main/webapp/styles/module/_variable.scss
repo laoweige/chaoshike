@@ -1,0 +1,45 @@
+@charset "UTF-8";
+$borderRadius : 5px;
+$sprite: sprite-map("sprite/*.png");
+$sprite-spacing:10px;
+$sprite-layout:smart;
+
+
+@mixin clearfix{
+  zoom:1;
+  &:after{
+    display:block;content:"";clear:both;height:0;overflow:hidden;
+  }
+}
+
+
+@mixin background($name,$normal){
+  background-repeat: no-repeat;
+  background-image: sprite-url($normal);
+  background-position: sprite-position($normal,$name);
+  height:image-height(sprite-file($normal, $name));
+  width: image-width(sprite-file($normal, $name));
+}
+
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select;
+  user-select: $select;
+}
+
+@-webkit-keyframes flash {
+  100% { left: 1000px; }
+}
+
+@-moz-keyframes flash {
+  100% { left: 1000px; }
+}
+
+@-o-keyframes flash {
+  100% { left: 1000px; }
+}
+
+@keyframes flash {
+  100% { left: 1000px; }
+}

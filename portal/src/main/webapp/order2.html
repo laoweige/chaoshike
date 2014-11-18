@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <title>智联推广售卖平台</title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon">
+    <link rel="bookmark" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/styles/main.css">
+
+    <!--[if lt IE 9]>
+    <!-- build:js scripts/ie.js -->
+    <script src="/scripts/ie/es5-shim.js"></script>
+    <!-- endbuild -->
+    <![endif]-->
+
+    <!-- build:js scripts/libraries.js -->
+    <script src="/scripts/lib/jquery.js"></script>
+    <script src="/scripts/lib/terrific-2.0.2.js"></script>
+    <script src="/scripts/lib/jQuery.md5.js"></script>
+    <script src="/scripts/lib/knockout-3.1.0.js"></script>
+    <script src="/scripts/lib/handlebars-v1.3.0.js"></script>
+    <script src="/scripts/lib/dialog.js"></script>
+    <script src="/scripts/lib/knockout.validation.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/app.js -->
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/module/pager.js"></script>
+    <script src="/scripts/module/order.js"></script>
+    <script src="/scripts/module/export-dialog.js"></script>
+    <script src="/scripts/module/order-success-dialog.js"></script>
+    <script src="/scripts/module/question.js"></script>
+    <!-- endbuild -->
+</head>
+<body class="page-order">
+
+
+<div class="g-head">
+    <div class="g-main">
+        <h1 class="logo">
+            <a href="/">智联推广售卖平台</a>
+            <sub>Beta版<i class="g-mk-triangle"></i></sub>
+        </h1>
+
+        <div class="ft">
+            欢迎您 ,<strong>ThoughtWorks</strong><a href="http://zhaopin.com" target="_blank">智联首页</a>
+
+        </div>
+    </div>
+</div>
+<div class="g-container">
+<div class="g-main g-cont">
+<div class="col_main">
+<div class="col_main_wrap">
+<div class="g-md-box g-md-tab">
+<div class="hd">
+    <ul>
+        <li class="tab-index-0"><a href="./../products.do">产品列表</a></li>
+        <li class="tab-index-1 active"><a href="./../orders.do">我的订单</a></li>
+        <li class="tab-index-2"><a href="./../questions.do">常见问题</a></li>
+    </ul>
+</div>
+<div class="bd">
+<div class="md-order mod mod-order">
+<form id="order-form" method="post" action="./../orders.do">
+<div class="order-hd">
+    <h2>新建订单</h2>
+
+</div>
+<div class="order-step order-step-0">
+    <h3 class="step-title"><span class="step-num">1</span>推广的产品：</h3>
+
+    <div class="step-cont">
+        <ul class="mod mod-radio-list g-md-position-list">
+            <li class="active">
+                <strong class="position-name">
+                    职位置顶
+                </strong>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="order-step order-step-1">
+    <h3 class="step-title"><span class="step-num">2</span>推广的职位：</h3>
+
+    <div class="step-cont">
+        <ul class="mod mod-radio-list g-md-position-list">
+            <li class="active">
+                <strong class="position-name cucumber-position">
+                    testyudingzhi
+                </strong>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="order-step order-step-2">
+    <h3 class="step-title"><span class="step-num">3</span>请确认推广条件：</h3>
+
+    <div class="step-cont">
+        <ul>
+            <li class="step-condition-item">
+                <div class="condition-label">推广地区：</div>
+                <div class="condition-bd">
+                    天津
+                </div>
+            </li>
+            <li class="step-condition-item  step-condition-position">
+                <div class="condition-label">职位类别：</div>
+                <div class="condition-bd">
+                    互联网产品/运营管理
+
+                                            <span class="order-giveaway">
+                                                <span class="giveaway-label">赠送</span><strong>电子商务经理/主管</strong>
+                                            </span>
+
+                </div>
+            </li>
+
+            <li class="step-condition-item">
+                <div class="condition-label">
+                    投放时间：
+                </div>
+                <div class="condition-bd">
+                    <ul class="mod mod-radio-list g-md-time-list">
+                        <li class="interval">
+                            <div class="item-wrap">
+                                <label for="day-5">
+                                    5天
+                                </label>
+                                <i class="checkbox"></i>
+                                <input type="radio" name="orderLength" value="5" id="day-5"
+                                       data-bind="checked: duration" data-price="170.0"/>
+                            </div>
+                        </li>
+                        <li class="interval">
+                            <div class="item-wrap">
+                                <label for="day-7">
+                                    7天
+                                </label>
+                                <i class="checkbox"></i>
+                                <input type="radio" name="orderLength" value="7" id="day-7"
+                                       data-bind="checked: duration" data-price="226.1"/>
+                            </div>
+                            <sub class="g-mk-discount">9.5折<i class="g-mk-triangle"></i></sub>
+                        </li>
+                        <li class="interval">
+                            <div class="item-wrap">
+                                <label for="day-15">
+                                    15天
+                                </label>
+                                <i class="checkbox"></i>
+                                <input type="radio" name="orderLength" value="15" id="day-15"
+                                       data-bind="checked: duration" data-price="433.5"/>
+                            </div>
+                            <sub class="g-mk-discount">8.5折<i class="g-mk-triangle"></i></sub>
+                        </li>
+                        <li class="interval">
+                            <div class="item-wrap">
+                                <label for="day-20">
+                                    20天
+                                </label>
+                                <i class="checkbox"></i>
+                                <input type="radio" name="orderLength" value="20" id="day-20"
+                                       data-bind="checked: duration" data-price="544.0"/>
+                            </div>
+                            <sub class="g-mk-discount">8折<i class="g-mk-triangle"></i></sub>
+                        </li>
+                    </ul>
+                    <p class="tips tips-result tips-strong"
+                       data-bind="css : { 'tips-result-visible' : !duration() }"><i
+                            class="g-icon-warning"></i></p>
+
+                    <p class="tips tips-result" data-bind="css : { 'tips-result-visible' : duration() }"><i
+                            class="g-icon-success"></i> 本次推广将由： <span class="tips-strong"><span
+                            data-bind=" text : startDate" data-startDate="1403193600000"
+                            class="startDate"></span> 开始</span>
+                        至 <span
+                                class="tips-strong"><span
+                                data-bind="text : endDate"></span> 结束</span></p>
+                </div>
+            </li>
+
+
+            <li class="step-condition-item" data-bind=" visible : duration() ">
+                <div class="condition-label">
+                    订单发票：
+                </div>
+                <div class="condition-bd">
+                    <input type="checkbox" name="invoiceRequired" id="need-invoice"
+                           data-bind="checked : isInvoiceActive" value="true"/>
+                    <label for="need-invoice" class="checkbox-label">索取发票 <span
+                            class="label-supplement">(需另付15元发票快递费)</span>
+                    </label>
+
+                    <div class="order-invoice" data-bind="css : { 'order-invoice-visible' : isInvoiceActive}">
+                        <ul class="invoice-fields">
+                            <li>
+                                <strong class="info-label">发票抬头：</strong>
+
+                                <input type="radio" name="invoice.userType" id="piao-head-1" value="COMPANY"
+                                       data-bind=" checked : invoiceUserType "/>
+                                <label for="piao-head-1">单位</label>
+
+                                <input type="radio" name="invoice.userType" id="piao-head-2" VALUE="PERSONAL"
+                                       data-bind=" checked : invoiceUserType "/>
+                                <label for="piao-head-2">个人</label>
+                            </li>
+                            <li data-bind="visible : enableUserName ">
+                                <strong class="info-label">单位名称：</strong>
+
+                                <input type="text" name="invoice.newUserName" data-bind=" value : invoiceUserName"
+                                       class="g-md-input"/>
+                            </li>
+                            <li>
+                                <strong class="info-label">发票内容：</strong>
+
+                                <input type="radio" name="invoice.type" id="piao-content-1"
+                                       checked="checked" value="RECRUITMENT"/>
+                                <label for="piao-content-1">招聘费</label>
+
+                                <input type="radio" name="invoice.type" id="piao-content-2" value="CONSULT"/>
+                                <label for="piao-content-2">咨询费</label>
+
+                                <input type="radio" name="invoice.type" id="piao-content-3" value="TRAINING"/>
+                                <label for="piao-content-3">培训费</label>
+                            </li>
+                            <li>
+                                <strong class="info-label">收件人：</strong>
+                                <input type="text" name="invoice.receiver" data-bind=" value : invoiceReceiver "
+                                       class="g-md-input"/>
+                            </li>
+                            <li>
+                                <strong class="info-label">手机号：</strong>
+
+                                <input type="text" name="invoice.mobile" data-bind=" value : invoiceMobile "
+                                       class="g-md-input"/>
+                            </li>
+                            <li>
+                                <strong class="info-label">邮寄地址：</strong>
+
+                                <input type="text" name="invoice.postAddress"
+                                       data-bind=" value : invoicePostAddress"
+                                       class="g-md-input"/>
+                            </li>
+                            <li>
+                                <strong class="info-label">邮编：</strong>
+
+                                <input type="text" name="invoice.postCode" data-bind=" value : invoicePostCode "
+                                       class="g-md-input"/>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="order-price" data-bind=" visible : duration() ">
+            <span class="price-original" data-bind=" visible : originalPrice() != totalPrice() ">原价:<strong
+                    class="promotion-price" data-bind=" text : originalPrice "></strong>元</span>
+
+        实付金额: <strong class="total-price" data-bind="text: totalPrice"></strong>元
+    </div>
+
+    <div class="order-submit">
+        <span class="info">请核对以上信息，下单后无法修改或退款</span>
+        <input type="submit" value="立即下单" class="g-btn create-order"
+               data-bind="click : submit , disable : !duration() || submitDisable() , css : { 'btn-disable' : !duration() || submitDisable() }"
+                />
+    </div>
+</div>
+
+<input type="hidden" name="totalPrice" data-bind="value:totalPrice">
+<input type="hidden" name="productId" value="1">
+<input type="hidden" name="positionNumber" value="CC000001422J90258322000">
+<input type="hidden" name="positionName" value="testyudingzhi">
+<input type="hidden" name="resourceType" value="resourceType.position">
+<input name="conditions.region" type="hidden" value="531"/>
+<input name="conditions.position" type="hidden" value="160200"/>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="col_sub g-md-box">
+    <div class="bd">
+        <a href="/search/1/positions.do" class="g-md-adimg">
+            <img src="/images/ad1.jpg" alt="搜索列表页职位 置顶">
+        </a>
+    </div>
+</div>
+</div>
+</div>
+
+
+<div class="g-foot">
+    <div class="g-main">
+        <p>智联介绍 | 网站地图 | 加入智联 | 法律声明 | 保密承诺 | 个人注册 | 联系方式 | 常见问题 | 您对 Zhaopin.com 有任何建议或意见请 联系我们</p>
+
+        <p>未经 zhaopin.com 同意，不得转载本网站之所有招聘信息及作品 智联招聘网版权所有© 1997-2013</p>
+
+        <p>京ICP备12025925号 电信业务审批[2001]字第233号函 京公网安备110105000322</p>
+    </div>
+</div>
+
+
+<script id="order-dialog-template" type="text/x-handlebars-template">
+    <div>
+
+        <div class="order-loading" data-bind="visible : !posted() ">
+            <div class="info">您的订单正在生成中，请稍等……</div>
+            <div class="info">
+                <img src="/images/loading.gif"/>
+            </div>
+        </div>
+
+        <div class="order-loading" data-bind="visible : error() ">
+            <div class="info">您的订单购买失败</div>
+            <div class="g-md-btncont">
+                <a class="g-btn cancel" href="./../products.do">重新购买</a>
+            </div>
+        </div>
+
+        <div class="order-success" data-bind=" visible : ( posted() && !error() && !payed() ) ">
+            <div class="info info-center">您的订单已生成。请在30分钟内付款，过时请重新下单。</div>
+            <div class="g-md-btncont">
+                <a target="_blank" class="g-btn btn-pay"
+                   data-pay-url="http://pay.dev.zhaopin.com/Payment/ChoosePayMode?"
+                   data-bind="click : pay , attr : { href : paymentUrl}">立即付款</a>
+                <a class="g-btn btn-default" href="/orders.do">稍后付款</a>
+            </div>
+        </div>
+
+        <div class="order-success" data-bind=" visible : payed ">
+            <div class="info info-center">您已成功下单。</div>
+            <div class="g-md-btncont">
+                <a class="g-btn" href="/orders.do">查看订单</a>
+                <a class="g-btn" href="/products.do">继续下单</a>
+            </div>
+        </div>
+
+    </div>
+
+</script>
+
+</body>
+</html>
+
+

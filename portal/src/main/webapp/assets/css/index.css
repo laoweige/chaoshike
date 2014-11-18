@@ -1,0 +1,230 @@
+@charset "utf-8";
+#container{background: #fffcf5; padding-bottom: 20px;}
+#category-list{display: block}
+/**
+adam @ 2014-06-04
+unset overflow: hidden;
+*/
+#index-main{width:1200px;}
+#index-main .left1{width: 200; height: 649px; float:left; position:relative;}
+#index-main .right1{width: 1000px;float:right;}
+#index-main .left{width: 800px;float:left;}
+#index-main .right{width:200px;float:right;background: #fff;}
+
+#mainslide{width:800px;height:300px;}
+
+#special-sale{background: #f2f2f2;}
+#special-sale .top{height:30px;background: url('http://img.shequ001.com/shequ001_web/www/sprite-index.png') 0 0 no-repeat;}
+
+#special-sale .b-tit{height:34px;padding:4px 25px;position: relative;}
+#special-sale .b-tit h3{margin:0;height:34px;background: url('http://img.shequ001.com/shequ001_web/www/sprite-index.png') -138px -57px no-repeat;padding-left: 100px;overflow: hidden;}
+#special-sale .b-tit .more{position: absolute;top:6px;right:25px;margin:0;}
+#special-sale .sale-time-count{font-weight:normal;font-size:12px;color:#999;position: relative;display: block;width:165px;margin-top: 6px;background: url('http://img.shequ001.com/shequ001_web/www/sprite-index.png') -154px -97px no-repeat;height:22px;line-height: 22px;}
+.sale-time-count span{font-weight:bold;font-size:14px;text-align:center;position: absolute;left:30px;top:0;display: block;width: 30px;height:22px;overflow: hidden;color:#fff;}
+.sale-time-count span.min{left:67px;}
+.sale-time-count span.second{left:104px;}
+.sale-time-count b{font-weight: normal;position: absolute;left:137px;}
+
+
+#special-sale-slide{position: relative;width: 800px;height: 263px}
+
+#special-sale-slide .filter{width: 750px;height:263px;position: absolute;left:25px;top:0px;overflow: hidden;}
+#special-sale-slide .slide-pannel{position: absolute;}
+#special-sale-slide .slide-handle{background: url('http://img.shequ001.com/shequ001_web/www/sprite-index.png') 0 -61px no-repeat;position: absolute;left:0px;top:0px;display: block;height:263px;width: 25px;cursor: pointer;}
+#special-sale-slide .slide-handle.right{background-position: -34px -61px;left:auto;right:0px;}
+
+#special-sale-slide .slide-item{/*position: absolute;top:0px;left:0px;*/width: 753px;height:266px;}
+
+
+#special-sale-slide .slide-inner-goods{position: relative;margin: 0 3px 3px 0;float:left;width: 248px;height:130px;background: #fff;overflow: hidden;}
+#special-sale-slide .slide-inner-goods .wrap{padding:5px 10px 5px 5px;}
+#special-sale-slide .slide-inner-goods .thumb{position: absolute;top:10px;left:6px;}
+#special-sale-slide .slide-inner-goods .thumb img{width: 110px;height: 110px}
+#special-sale-slide .slide-inner-goods .des{margin-left: 120px;}
+#special-sale-slide .slide-inner-goods .g-name{line-height: 18px;font-weight:normal;height:55px;overflow: hidden;margin:0;}
+
+#special-sale-slide .slide-inner-goods p.price{margin:8px 0 6px;line-height: 18px;font-weight: bold}
+
+#special-sale .bottom{ /*background: url('http://img.shequ001.com/shequ001_web/www/sprite-index.png') 0 -40px no-repeat;*/ background: #DEDEDE; height:14px;}
+
+#index-main .section{padding:10px 12px;border-bottom:1px solid #ccc;border-right:1px solid #ccc;}
+#index-main .section .sec-t{position: relative;height:24px;line-height: 24px;}
+#index-main .section .sec-t h5{color:#333;font-family: 'Microsoft YaHei';font-size:16px;margin: 0;}
+#index-main .section .sec-t{margin-bottom: 7px;}
+#index-main .section .sec-t .more{position: absolute;top:5px;right:0px;margin:0;display: block;width: 14px;height:14px;background: url('sprite-common.png') -223px 0 no-repeat}
+
+#index-main .section .sec-c-card ul{ overflow:hidden; list-style:none; margin-bottom: -1px;}
+#index-main .section .sec-c-card li{ float:left; overflow:hidden; padding-bottom:9px;}
+#index-main .section .sec-c-card .r_t_yuan{background:url(http://img.shequ001.com/shequ001_web/promo/icon_yuan.gif) no-repeat; float:left; height:35px; width:72px;}
+#index-main .section .sec-c-card .r_t_lp{ float:right; width:96px; color:#666; padding-left: 5px;}
+#index-main .section .sec-c-card .r_t_200yuan:hover{background-position: 0 -45px;-webkit-transition: all .25s ease; -moz-transition: all .25s ease; -o-transition: all .25s ease; -ms-transition: all .25s ease; transition: all .25s ease; }
+#index-main .section .sec-c-card .r_t_500yuan{background-position: -73px 0;}
+#index-main .section .sec-c-card .r_t_500yuan:hover{background-position: -73px -45px;-webkit-transition: all .25s ease; -moz-transition: all .25s ease; -o-transition: all .25s ease; -ms-transition: all .25s ease; transition: all .25s ease; }
+#index-main .section .sec-c-card .r_t_1000yuan{background-position: -146px 0;}
+#index-main .section .sec-c-card .r_t_1000yuan:hover{background-position: -146px -45px; -webkit-transition: all .25s ease; -moz-transition: all .25s ease; -o-transition: all .25s ease; -ms-transition: all .25s ease; transition: all .25s ease; }
+
+#activity .sec-c li,#announce .sec-c li{line-height: 20px;height:20px;overflow: hidden;}
+#activity .sec-c li a,#announce .sec-c li a{color:#666;}
+#activity .sec-c li.hl a,#announce .sec-c li.hl a{color:#ff6600;}
+
+#announce .sec-c li.spilt{ padding-top: 9px;}
+
+#weixin-show .sec-c{position: relative;height: 84px;}
+#qcode-weixin{position: absolute;top:0px;left:0;width: 83px;height: 83px;}
+#weixin-show p.des{padding: 14px 0 0 100px; color:#666;}
+
+
+#pre-card .sec-c{}
+#pre-card .sec-c li{position: relative;margin-bottom: 5px; overflow:hidden;}
+#pre-card .sec-c .thumb{float: left; width: 72px; height: 35px; margin-right: 5px;}
+#pre-card .sec-c .thumb img{width: 72px;height:35px}
+#pre-card .sec-c p.value{line-height: 14px;}
+
+
+#charge.section{padding:0;overflow: hidden;}
+#charge .sec-t{height: 32px;width:205px;}
+#charge .hdl-switch{text-align: center;height: 32px;line-height: 32px;border-bottom:1px solid #fff;display: block;float: left;width: 100px;border-right:1px solid #eee;}
+#charge .hdl-switch.show{border-bottom: 1px solid #eee}
+#charge .sec-c{padding:9px 13px;}
+
+#mobile-charge li{padding:8px 0;overflow: hidden;}
+#mobile-charge li .label{float:left;display: block;width: 43px;text-align: right}
+#mobile-charge .com-input{float:left;width: 120px;color:#999;padding:2px 2px;}
+#mobile-charge .carrier{color:#999;margin-left: 5px;}
+#mobile-charge .price{padding:10px 0 11px;}
+#mobile-charge .price-zone{font-size: 14px;color:#e4393c;line-height: 18px;font-weight: bold;}
+#mobile-charge .submit{display: block;width: 50px;padding:5px 8px 6px;}
+
+
+#floor-1{margin-top: 30px;}
+
+.floor{overflow: hidden;/* hidden  adam background: #ea5154;*/margin-bottom: 30px;position: relative;}
+.float-index{position: absolute;top:0px;right:0px;}
+.floor img{display: block;vertical-align: top;}
+.floor .meta{float:left;width: 252px}
+.floor .show{float:right;width: 948px;overflow: hidden;}
+.floor .show .main{overflow: hidden;}
+.floor .show .main .floor-goods{/*float:left;width: 804px*/}
+.floor .show .main .brands{float:right;width: 143px;height:504px;background: #fff;overflow: hidden;}
+.floor-tit{ height:127px; overflow: hidden; position: relative; top:5px;}
+
+.floor-count{line-height: 48px;text-align: center;font-weight:bold;font-size:34px;font-family:"Microsoft YaHei";display: block;position: absolute;left:13px;top:7px;width: 50px;height:60px;background: url('http://img.shequ001.com/shequ001_web/www/sprite-index.png') -240px -129px no-repeat}
+
+.floor-label{/*background: url('http://img.shequ001.com/shequ001_web/www/sprite-index.png') 175px -333px no-repeat;*/position: absolute;bottom:0px;left:0px;width: 250px;height:60px;}
+.floor-label h3{text-indent:10px; line-height: 60px; font-size:35px; font-family: "Microsoft YaHei"; font-weight: normal; color:#fff;}
+.floor-mark{height:567px;}
+.floor-mark-img{width: 245px;height:400px;overflow: hidden;}
+.floor-mark-img img{width: 245px;height:400px;display: block;vertical-align: top;}
+.floor-marks{overflow: hidden;}
+.floor-marks li{overflow: hidden;background: #f08688;float:left;color:#fff;width: 79px;height:78px;margin: 4px 0px 0 4px;overflow: hidden;text-align: center;font-size:20px;line-height: 26px;font-weight: bold; border-radius: 5px;}
+.floor-marks .cur{font-size:26px;color:#fff;}
+/*
+.mark-item p{font-family: "Microsoft YaHei"; font-weight: normal; letter-spacing: 2px; margin: 7px;overflow: hidden;text-align: center;}
+*/
+/**
+	adam 2014-07-07 
+	start
+*/
+.mark-item p{font-family: "Microsoft YaHei"; font-weight: normal; letter-spacing: 2px; margin: 0px;overflow: hidden;text-align: center; width:100%; height:78px;}
+.mark-item p a,.mark-item p a:visited,.mark-item p a:active{font-size:18px;color:#FFF; line-height:78px; display:block; width:100%; height:100%; border-radius:5px; transition:all .3s ease-in-out; background:none;}
+.mark-item p a:hover{ text-decoration:none; color:#666; background:#FFF;}
+.mark-item p a span{ padding:16px 0 0 0; line-height:22px; display:block;}
+/**
+	adam 2014-07-07 
+	over
+*/
+.floor-ad-hdl{ position: absolute; bottom: 5px; right:10px;}
+.floor-ad-hdl-item{display: block;float:left;width: 22px;height:22px;background: url('http://img.shequ001.com/shequ001_web/www/sprite-index.png') -225px -191px no-repeat;cursor: pointer;}
+.floor-ad-hdl-item.active{background-position: -180px -191px;}
+
+.floor-goods{}
+.floor-goods .sec-t{ height:28px;}
+.floor-goods .sec-t li{ float:left; width: 201px; overflow: hidden;}
+.floor-goods .swtich-hdl{ text-align: center; color:#fff; height:28px; line-height:25px; overflow: hidden;}
+.floor-goods .swtich-hdl a{ color:#fff;}
+.floor-goods .swtich-hdl span{ cursor: pointer;}
+.floor-goods .swtich-hdl.cur span{ background: #fff; border-radius: 4px; padding:2px 3px;color:#666; position: relative; top: 2px;cursor: pointer;}
+/**
+	adam 2014-07-07 
+	start
+*/
+.floor-goods .swtich-hdl span{ transition:padding .3s ease-in-out;}
+.floor-goods .swtich-hdl.cur span{padding:2px 20px;}
+/**
+	adam 2014-07-07 
+	over
+*/
+.floor-goods .switch-pannel{/*width: 950px;*/height:504px;overflow: hidden;position: relative;}
+.floor-goods .switch-item{position: absolute;top:0px;left:0px;background: #ddd;width: 947px}
+.floor-goods .switch-item ul{width: 804px;overflow: hidden;float: left}
+.floor-goods .sec-c{background: #fff;border-right:1px solid #ddd;}
+
+.fl-g-item{float:left;width: 200px;margin:0 1px 1px 0;height:251px;overflow: hidden;background: #fff;}
+.fl-g-item .inner{margin: 8px 30px;}
+.fl-g-item .g-name{line-height: 18px;font-weight: normal;height:40px;overflow: hidden;margin:0 0 3px;}
+.fl-g-item .thumb{width: 150px;margin: 13px auto 15px;}
+.fl-g-item .thumb img{width: 150px;height:150px;display: block;vertical-align: top;}
+.fl-g-item .price{font-weight: bold}
+
+.floor .brands ul{background: #fff;}
+.floor .brands li{border-bottom:1px solid #ddd;}
+.floor .brands li img{display: block;vertical-align: top;width:143px;height:83px;}
+
+.floor .ads{height:170px;overflow: hidden;background: #fff;}
+.floor .ad-item{float:left;width: 316px;}
+.floor .ad-item a{display:block;border-right:1px solid #ddd;border-bottom:1px solid #ddd;}
+
+.floor-mark-ads{width: 245px;height:400px;overflow: hidden;margin:7px 3px 0;}
+
+
+
+#brand-street{background: #f5f5f5;border:1px solid #f5f5f5;overflow: hidden;padding:0 0 4px 0;margin-bottom: 30px;}
+#brand-street li{float:left;width: 195px;height:260px;background: #fff;margin:5px 0 0 4px;position: relative;}
+#brand-street .thumb{width: 195px;height:195px;overflow: hidden;}
+#brand-street .thumb img{width: 200px;height:200px;position: relative;}
+#brand-street .logo{height:65px;text-align: center;}
+#brand-street .logo img{height:50px;margin-top: 7px;}
+
+#brand-street li.title{background: url('brand-street-title.gif') center center no-repeat;}
+#brand-street li.more{background: url('brand-street-more.gif') 70px center no-repeat;}
+#brand-street .link-more{display:block;position: absolute;top:0;left:0;width: 195px;height:260px;}
+
+#brand-street li a.mask{visibility: hidden; position: absolute;top: 0;left:0;width: 195px;height: 260px;background: #000; filter:alpha(opacity=30);   -moz-opacity:0.3;   -khtml-opacity: 0.3;   opacity: 0.3;   }
+#brand-street li.show a.mask{visibility: visible;}
+
+#mainslide .ex-slide-box{ 
+    width:800px;
+    height:300px;
+    overflow:hidden;
+    position:relative;
+}
+/*
+#mainslide .ex-slide-box ol li{
+    height:300px;
+    width:800px;
+    list-style:none; 
+    display:block;
+    overflow:hidden;
+    border:0;
+    margin:0;
+}
+#mainslide .ex-slide-box .slide-trigger{
+    position:absolute; 
+    z-index:999;
+}
+*/
+    .slide-trigger{bottom:10px;right:10px;}
+    .slide-trigger li{float:left;width:15px;height:15px;line-height:15px;color:#000;background:#ececec;opacity:0.7;text-align:center;margin-left:8px;cursor:pointer}
+    .slide-trigger li.active{background:#ff0000;color:#fff} 
+
+#r_t_gouwu ul{ overflow:hidden; list-style:none;}
+#r_t_gouwu li{ font-size:12px; float:left; overflow:hidden; padding-bottom:10px;}
+#r_t_gouwu .r_t_yuan{background:url(http://img.shequ001.com/shequ001_web/promo/icon_yuan.gif) no-repeat; float:left;margin-right:5px; height:35px; width:72px;}
+#r_t_gouwu .r_t_lp{ float:right; width:98px;}
+#r_t_gouwu a{ color:#06c; text-decoration:none;}
+#r_t_gouwu a:hover{ color:#f00;}
+#r_t_gouwu .r_t_200yuan:hover{background-position: 0 -45px;-webkit-transition: all .25s ease; -moz-transition: all .25s ease; -o-transition: all .25s ease; -ms-transition: all .25s ease; transition: all .25s ease; }
+#r_t_gouwu .r_t_500yuan{background-position: -73px 0;}
+#r_t_gouwu .r_t_500yuan:hover{background-position: -73px -45px;-webkit-transition: all .25s ease; -moz-transition: all .25s ease; -o-transition: all .25s ease; -ms-transition: all .25s ease; transition: all .25s ease; }
+#r_t_gouwu .r_t_1000yuan{background-position: -146px 0;}
+#r_t_gouwu .r_t_1000yuan:hover{background-position: -146px -45px; -webkit-transition: all .25s ease; -moz-transition: all .25s ease; -o-transition: all .25s ease; -ms-transition: all .25s ease; transition: all .25s ease; }

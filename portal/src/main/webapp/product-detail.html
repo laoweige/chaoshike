@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <title>智联推广售卖平台</title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon">
+    <link rel="bookmark" href="favicon.ico" type="image/x-icon">
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/product/search/style.css">
+    <!-- endbuild -->
+
+    <!--[if lt IE 9]>
+    <!-- build:js scripts/ie.js -->
+    <script src="/scripts/ie/es5-shim.js"></script>
+    <script src="/scripts/ie/json3.js"></script>
+    <!-- endbuild -->
+    <![endif]-->
+
+    <!-- build:js scripts/vendor.js -->
+    <script src="/scripts/lib/jquery.js"></script>
+    <script src="/scripts/lib/terrific-2.0.2.js"></script>
+    <script src="/scripts/lib/jQuery.md5.js"></script>
+    <script src="/scripts/lib/knockout-3.1.0.js"></script>
+    <script src="/scripts/lib/handlebars-v1.3.0.js"></script>
+    <script src="/scripts/lib/dialog.js"></script>
+    <script src="/scripts/lib/knockout.validation.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/scripts.js -->
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/module/order.js"></script>
+    <script src="/scripts/module/export-dialog.js"></script>
+    <script src="/scripts/module/order-success-dialog.js"></script>
+    <!-- endbuild -->
+</head>
+<body class="page-question">
+<div class="g-head">
+    <div class="g-main">
+        <h1 class="logo">
+            <a href=".products.do">智联推广售卖平台</a>
+            <sub>买家版<i class="g-mk-triangle"></i></sub>
+        </h1>
+
+        <div class="ft">
+            <a href="http://zhaopin.com" target="_blank">智联首页</a>
+
+        </div>
+    </div>
+</div>
+<div class="g-container">
+
+    <div class="g-main g-cont">
+
+        <div class="g-md-box">
+            <div class="hd">
+                <a href="#">产品列表</a> <span class="division">&gt;</span> 职位置顶详细介绍
+
+                <a href="#" class="more">返回</a>
+            </div>
+            <div class="bd">
+                <div class="g-md-adimg">
+                    <img src="images/product/search/top-ad.jpg" alt="" height="170"/>
+                </div>
+
+                <div class="md-prod-block md-prod-block-1">
+                    <h3 class="block-title"></h3>
+
+                    <div class="block-cont">
+                        <ul>
+                            <li><i class="icon-tick"></i>职位展示不沉底，推广期间始终靠前</li>
+                            <li><i class="icon-tick"></i>红色<span class="hot">“顶”</span>字图标，更多吸引求职者</li>
+                            <li><i class="icon-tick"></i>按地区和职位精确投放，不花冤枉钱</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="md-prod-block md-prod-block-2">
+                    <h3 class="block-title"></h3>
+
+                    <div class="block-cont">
+                        <p>职位搜索列表页是求职者浏览职位的最重要的渠道，在搜索列表中职位排名靠前，就能在第一时间获得求职者关注，有效吸引人才投递。</p>
+
+                        <p>开通职位置顶后，您的职位将固定在置顶区域，置顶职位的前后排列顺序将会进行智能调整，保证每个置顶职位的排序更靠前。</p>
+
+                        <p class="img-cont">
+                            <img src="images/product/search/bg-shot.jpg" alt="" height="696"/>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="md-prod-block md-prod-block-3">
+                    <h3 class="block-title"></h3>
+
+                    <div class="block-cont">
+                        <div class="g-md-process-bar">
+							<span class="process-step process-step-1">
+								<span class="step-num">1</span>
+								<strong class="step-text">选择置顶职位</strong>
+							</span>
+							<span class="process-step process-step-2">
+								<span class="step-num">2</span>
+								<strong class="step-text">设置推广条件</strong>
+							</span>
+							<span class="process-step process-step-3">
+								<span class="step-num">3</span>
+								<strong class="step-text">付款</strong>
+							</span>
+							<span class="process-step process-step-4">
+								<span class="step-num">4</span>
+								<strong class="step-text">成功推广</strong>
+							</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="g-md-btncont">
+                    <a href="#" class="btn btn-order" title="立即下单">立即下单<i class="fz"><i class="fz"></i></i></a>
+                </div>
+
+                <script>
+					var isIe6 = function(){
+						var isIe6 = false;
+						if (/msie/.test(navigator.userAgent.toLowerCase())) {
+							if (jQuery.browser && jQuery.browser.version && jQuery.browser.version == '6.0') {
+								isIe6 = true
+							} else if (!$.support.leadingWhitespace) {
+								isIe6 = true;
+							}
+						}
+						return isIe6;
+					};
+					$(function(){
+						var $window = $(window);
+						var $btncont  = $('.g-md-btncont'),
+								btnTop = $btncont.offset().top;
+
+						var stickyStatus = false;
+
+						$btncont.width($btncont.width());
+
+						function updatePosition(){
+
+							var windowHeight = $(window).height(),
+									scrollTop = $('body').scrollTop() || $('html').scrollTop();
+
+							if( btnTop > scrollTop  &&  btnTop < windowHeight + scrollTop){
+
+								if(stickyStatus){
+									$btncont.css({'position':'relative','top':0});
+									$btncont.removeClass('sticky-btn');
+									stickyStatus = false;
+								}
+
+							}else{
+								if(!stickyStatus){
+									if(isIe6()){
+										$btncont.css({ 'position':'absolute' })
+									}else{
+										$btncont.css({
+											'position':'fixed',
+											'bottom' : 0,
+											'top' : 'auto'
+										})
+									}
+									$btncont.addClass('sticky-btn');
+									stickyStatus = true;
+								}else if(isIe6()){
+									$btncont.css('top' ,  scrollTop+windowHeight - 165 )
+								}
+							}
+
+						}
+
+						$window.on('resize',function(){
+							updatePosition();
+						});
+						$window.scroll(updatePosition);
+						updatePosition();
+					})
+
+
+
+                </script>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="g-foot">
+    <div class="g-main">
+        <p>智联介绍 | 网站地图 | 加入智联 | 法律声明 | 保密承诺 | 个人注册 | 联系方式 | 常见问题 | 您对 Zhaopin.com 有任何建议或意见请 联系我们</p>
+
+        <p>未经 zhaopin.com 同意，不得转载本网站之所有招聘信息及作品 智联招聘网版权所有© 1997-2013</p>
+
+        <p>京ICP备12025925号 电信业务审批[2001]字第233号函 京公网安备110105000322</p>
+    </div>
+</div>
+
+
+</body>
+</html>
