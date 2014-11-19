@@ -11,6 +11,25 @@ public class RegionJson {
         this.name = name;
     }
 
+    private String bgColor;
+    private String fgColor;
+
+    public String getFgColor() {
+        return fgColor;
+    }
+
+    public void setFgColor(String fgColor) {
+        this.fgColor = fgColor;
+    }
+
+    public String getBgColor() {
+        return bgColor;
+    }
+
+    public void setBgColor(String bgColor) {
+        this.bgColor = bgColor;
+    }
+
     public int getId() {
         return id;
     }
@@ -21,7 +40,7 @@ public class RegionJson {
 
     String name;
     List<ContentJson> ads;
-    List<ProductJson> products;
+
     List<CategoryJson> categories;
     List<BrandJson> brands;
 
@@ -41,13 +60,6 @@ public class RegionJson {
         this.ads = ads;
     }
 
-    public List<ProductJson> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<ProductJson> products) {
-        this.products = products;
-    }
 
     public List<CategoryJson> getCategories() {
         return categories;

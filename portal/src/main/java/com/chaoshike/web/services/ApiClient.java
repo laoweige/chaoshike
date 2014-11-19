@@ -49,7 +49,19 @@ public class ApiClient {
         return entityList;
     }
 
-    public List<Map<String,Object>> getCategories(int id){
+    public List<Map<String,Object>> getChannel(int id){
+
+        Response response = client.target(baseUrl).path("categories").request(MediaType.APPLICATION_JSON_TYPE)
+                .get();
+
+        List<Map<String,Object>> entityList = response.readEntity(List.class);
+
+
+        return entityList;
+    }
+
+
+    public List<Map<String,Object>> getCategories(String id){
 
         Response response = client.target(baseUrl).path("categories/"+id).request(MediaType.APPLICATION_JSON_TYPE)
                 .get();

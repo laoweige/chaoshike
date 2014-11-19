@@ -6,6 +6,7 @@ import com.chaoshi.cache.IEntityFactory;
 import com.chaoshi.cache.MemoryCache;
 import com.chaoshi.util.EnumTimeUnit;
 import com.chaoshike.shop.repository.CategoryRepository;
+import com.chaoshike.shop.repository.ChannelRepository;
 import com.chaoshike.shop.repository.LayoutRepository;
 import com.chaoshike.shop.repository.ProductRepository;
 import com.chaoshike.shop.repository.entity.*;
@@ -19,11 +20,16 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Component
 @Path("/layouts")
 public class LayoutApi {
+
+    @Autowired
+    private ChannelRepository channelRepository;
 
     @Autowired
     private CategoryRepository categoryRepository;
@@ -85,6 +91,7 @@ public class LayoutApi {
                     ProductJson pj = new ProductJson(product.getProductId(),
                             product.getProductName(), product.getSummary(), product.getImagePath(), product.getRegionId(),
                             product.getSalePrice(), product.getCategoryId(), product.getSalePrice());
+                    pj.setChannelId(product.getChannelId());
                     pjs.add(pj);
                 }
                 System.out.println(pjs);
@@ -93,15 +100,32 @@ public class LayoutApi {
                     ContentJson cjson = new ContentJson(content.getRegionId(), content.getContentType(), content.getKeyword(), content.getUrl(), content.getImagePath());
                     cjs.add(cjson);
                 }
-
+                Map<Integer,String> bgMap=new HashMap<Integer,String>(){{
+                    put(2,"#FAB709");
+                    put(3,"#67bbea");
+                    put(4,"#7CBD67");
+                    put(1,"#FF6B79");
+                }};
+                Map<Integer,String> fgMap=new HashMap<Integer,String>(){{
+                    put(2,"#FCCD53");
+                    put(3,"#95d0f0");
+                    put(4,"#A4D195");
+                    put(1,"#FF98A2");
+                }};
                 for (LayoutRegion region : regions) {
                     RegionJson rj = new RegionJson(region.getRegionId(), region.getRegionName());
-                    fullInCategories(rj, convert(region.getCategoryIds()));
-                    fullInProducts(rj, pjs);
-                    fullInContents(rj, cjs);
+                    rj.setBgColor(bgMap.get(rj.getId()));
+                    rj.setFgColor(fgMap.get(rj.getId()));
+
+
+
                     if (region.getRegionType() == 0) {
+                        fullInTopCategories(rj, convert(region.getCategoryIds()), pjs);
+                        fullInContents(rj, cjs);
                         result.setTopRegion(rj);
                     } else {
+                        fullInCategories(rj, convert(region.getCategoryIds()), pjs);
+                        fullInContents(rj, cjs);
                         result.getRegions().add(rj);
                     }
                 }
@@ -112,7 +136,7 @@ public class LayoutApi {
         //return result;
     }
 
-    private void fullInCategories(RegionJson region, List<Integer> ids) {
+    private void fullInCategories(RegionJson region, List<Integer> ids,List<ProductJson> products) {
         List<Category> categories = categoryRepository.allSubCategory();
         List<CategoryJson> cjs = new ArrayList<>();
 
@@ -121,27 +145,69 @@ public class LayoutApi {
                 CategoryJson cjson = new CategoryJson(category.getCategoryId(), category.getCategoryName(), category.getParentId());
 
                 cjs.add(cjson);
+                cjson.setProducts(new ArrayList<ProductJson>());
             }
         }
+
+
+        for (ProductJson product : products) {
+            for (CategoryJson category : cjs) {
+                if (product.getCategory() == category.getId() && product.getRegionId() == region.getId()) {
+                    category.getProducts().add(product);
+                    break;
+                }
+            }
+        }
+
         if (cjs.size() > 0) {
             region.setCategories(cjs);
         }
 
     }
 
-    private void fullInProducts(RegionJson region, List<ProductJson> products) {
+    private void fullInTopCategories(RegionJson region, List<Integer> ids,List<ProductJson> products) {
+        List<Channel> channels = channelRepository.All();
+        List<CategoryJson> cjs = new ArrayList<>();
 
-        List<ProductJson> regionProducts = new ArrayList<>();
-        region.setProducts(regionProducts);
+        for (Channel channel : channels) {
+            if (ids.contains(channel.getChannelId())) {
+                CategoryJson cjson = new CategoryJson(channel.getChannelId(), channel.getChannelName(), 0);
+
+                cjs.add(cjson);
+                cjson.setProducts(new ArrayList<ProductJson>());
+            }
+        }
+
+
         for (ProductJson product : products) {
-            for (CategoryJson category : region.getCategories()) {
-                if (product.getCategory() == category.getId() && product.getRegionId() == region.getId()) {
-                    regionProducts.add(product);
+            for (CategoryJson category : cjs) {
+                if (product.getChannelId() == category.getId() && product.getRegionId() == region.getId()) {
+
+                    category.getProducts().add(product);
                     break;
                 }
             }
         }
+
+        if (cjs.size() > 0) {
+            region.setCategories(cjs);
+        }
+
     }
+
+//    private void fullInProducts(RegionJson region, List<ProductJson> products) {
+//
+//        List<ProductJson> regionProducts = new ArrayList<>();
+//        region.setProducts(regionProducts);
+//        for (ProductJson product : products) {
+//            for (CategoryJson category : region.getCategories()) {
+//                if (product.getCategory() == category.getId() && product.getRegionId() == region.getId()) {
+//                    regionProducts.add(product);
+//                    break;
+//                }
+//            }
+//        }
+//    }
 
     private void fullInContents(RegionJson region, List<ContentJson> contents) {
 

@@ -13,10 +13,23 @@ public class CategoryJson {
         this.parentId = parentId;
     }
 
+    public CategoryJson copyFirst(){
+        return new CategoryJson(id,name,parentId);
+    }
+
     private int id;
     private String name;
     private int parentId;
     private int channelId;
+    private List<ProductJson> products;
+
+    public List<ProductJson> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<ProductJson> products) {
+        this.products = products;
+    }
 
     public int getChannelId() {
         return channelId;

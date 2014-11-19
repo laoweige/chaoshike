@@ -86,6 +86,10 @@ INSERT INTO `Categories` (`channelId`, `categoryName`, `status`, `parentId`, `cr
 VALUES ('1', '调味品', '0', '2', '2014-11-9');
 INSERT INTO `Categories` (`channelId`, `categoryName`, `status`, `parentId`, `createTime`)
 VALUES ('2', '婴儿奶粉', '0', '4', '2014-11-9');
+INSERT INTO `Categories` (`channelId`, `categoryName`, `status`, `parentId`, `createTime`)
+VALUES ('2', '拉拉裤', '0', '3', '2014-11-9');
+INSERT INTO `Categories` (`channelId`, `categoryName`, `status`, `parentId`, `createTime`)
+VALUES ('2', '婴儿尿裤', '0', '3', '2014-11-9');
 
 
 INSERT INTO `Products` (`shopId`, `channelId`, `classId`, `categoryId`, `brandId`,
@@ -109,7 +113,7 @@ INSERT INTO `Products` (`shopId`, `channelId`, `classId`, `categoryId`, `brandId
 `costPrice`, `salePrice`, `marketPrice`, `repertory`, `saleNum`, `commentNum`, `status`)
 VALUES ('1', '1', '1', '6', '1',
 '汰渍果香洗衣液2kg', '双11,局限', '11',
-'http://img.shequ001.com/shop/images/goods/20140128/JLF6903148181119.jpg?0#h',
+'http://img.shequ001.com/shop/beijing/tongzhou/images/goods/20140725/e285c86f8e44ea41.jpg?1406276846#h',
 '5', '5.6', '6', '20', '2', '0', '0');
 
 INSERT INTO `Products` (`shopId`, `channelId`, `classId`, `categoryId`, `brandId`,
@@ -135,6 +139,14 @@ INSERT INTO `Products` (`shopId`, `channelId`, `classId`, `categoryId`, `brandId
 VALUES ('1', '1', '1', '9', '1',
 '9,汰渍果香洗衣液2kg', '双11,局限', '11',
 'http://img.shequ001.com/shop/images/goods/20140128/JLF6903148181119.jpg?0#h',
+'5', '5.6', '6', '20', '2', '0', '0');
+
+INSERT INTO `Products` (`shopId`, `channelId`, `classId`, `categoryId`, `brandId`,
+`productName`, `summary`, `description`, `imagePath`,
+`costPrice`, `salePrice`, `marketPrice`, `repertory`, `saleNum`, `commentNum`, `status`)
+VALUES ('1', '2', '4', '9', '1',
+'9,汰渍果香洗衣液2kg', '双11,局限', '11',
+'http://beijing.shequ001.com/public/images/ee/ec/c6/cc2037011ce9f0be621411310aaffe98.jpg?1411953639#h',
 '5', '5.6', '6', '20', '2', '0', '0');
 
 

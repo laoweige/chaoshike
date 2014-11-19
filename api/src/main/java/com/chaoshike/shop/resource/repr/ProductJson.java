@@ -7,6 +7,15 @@ public class ProductJson {
     private String summary;
     private String image;
     private int regionId;
+    private int channelId;
+
+    public int getChannelId() {
+        return channelId;
+    }
+
+    public void setChannelId(int channelId) {
+        this.channelId = channelId;
+    }
 
     public int getRegionId() {
         return regionId;

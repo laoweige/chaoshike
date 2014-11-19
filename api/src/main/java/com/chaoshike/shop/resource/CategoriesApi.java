@@ -38,10 +38,11 @@ public class CategoriesApi {
         return getCategoryTree();
     }
 
-    @GET
-    @Path("channel-{id}")
-    @Produces(MediaType.APPLICATION_JSON + "; charset=utf-8")
-    public CategoryJson getChannelBy(@PathParam("id") int id) {
+
+//    @GET
+//    @Path("c{id}")
+//    @Produces(MediaType.APPLICATION_JSON + "; charset=utf-8")
+    private CategoryJson getChannelBy(@PathParam("id") int id) {
         List<CategoryJson> categories = getCategoryTree();
         for (CategoryJson channel : categories) {
             if (channel.getId() == id)
@@ -53,18 +54,35 @@ public class CategoriesApi {
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON + "; charset=utf-8")
-    public CategoryJson getCategoryBy(@PathParam("id") int id) {
+    public List<CategoryJson> getCategoryBy(@PathParam("id") String id) {
+
+        List<CategoryJson> result = new ArrayList<>();
+        if(id.startsWith("c")){
+            result.add(getChannelBy(Integer.parseInt(id.substring(1))));
+            return result;
+        }
+        int categoryId=Integer.parseInt(id);
         List<CategoryJson> categories = getCategoryTree();
+        CategoryJson cj;
+        CategoryJson pj;
         for (CategoryJson channel : categories) {
             if (channel.getChildren() != null) {
+                cj = channel;
                 for (CategoryJson category : channel.getChildren()) {
-                    if (category.getId() == id)
-                        return category;
-                    else {
+                    if (category.getId() == categoryId) {
+                        result.add(cj);
+                        result.add(category);
+                        return result;
+                    }else {
                         if (category.getChildren() != null) {
+                            pj=category;
                             for (CategoryJson subCategory : category.getChildren()) {
-                                if (subCategory.getId() == id)
-                                    return subCategory;
+                                if (subCategory.getId() == categoryId) {
+                                    result.add(cj);
+                                    result.add(pj);
+                                    result.add(subCategory);
+                                    return result;
+                                }
                             }
                         }
                     }

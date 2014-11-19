@@ -40,6 +40,10 @@ public class DefaultController {
         System.out.println("@##products######################@");
         System.out.println(products);
         ModelAndView modelAndView = new ModelAndView();
+
+        modelAndView.addObject("categories", categories);
+        modelAndView.addObject("topRegion", layoutMap.get("topRegion"));
+        modelAndView.addObject("regions", layoutMap.get("regions"));
         modelAndView.setViewName("index");
         return modelAndView;
     }

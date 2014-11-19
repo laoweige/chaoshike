@@ -23,7 +23,7 @@ CREATE TABLE LayoutRegions (
 );
 
 INSERT INTO `LayoutRegions` (`regionName`, `layoutId`,`regionType`, `categoryIds`, `brandIds`)
-VALUES ('顶部广告区', '1', '0', '5', '1,2,3,3');
+VALUES ('顶部广告区', '1', '0', '1,2', '1,2,3,3');
 INSERT INTO `LayoutRegions` (`regionName`, `layoutId`,`regionType`, `categoryIds`, `brandIds`)
 VALUES ('食品饮料', '1', '1', '6,7', '1,2,3,3');
 INSERT INTO `LayoutRegions` (`regionName`, `layoutId`,`regionType`, `categoryIds`, `brandIds`)
@@ -46,13 +46,42 @@ VALUES ('1', '1', '0', '薯片', '/products?keyword=薯片');
 INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`)
 VALUES ('1', '1', '0', '奥利奥', '/products?keyword=奥利奥');
 INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`, `imagePath`)
-VALUES ('1', '2', '0', '香飘飘奶茶', '/products?keyword=香飘飘奶茶', 'http://img.shequ001.com/shop/images/pc/shenghuo/20141114/yilou_xppiao_20141114.jpg');
-INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`)
-VALUES ('1', '2', '1', '洁面', '/products?keyword=薯片');
-INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`)
-VALUES ('1', '2', '2', '防晒', '/products?keyword=奥利奥');
+VALUES ('1', '2', '0', '香飘飘奶茶', '/products?keyword=香飘飘奶茶', 'http://img.shequ001.com/images/20141023/qingyang.jpg');
 INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`, `imagePath`)
-VALUES ('1', '3', '0', '让肌肤健康清爽', '/products?keyword=香飘飘奶茶', 'http://img.shequ001.com/shop/images/pc/shenghuo/20141114/yilou_xppiao_20141114.jpg');
+VALUES ('1', '2', '0', '香飘飘奶茶', '/products?keyword=香飘飘奶茶', 'http://img.shequ001.com/shop/images/pc/shenghuo/20141114/yilou_jiaozi_20141114.jpg');
+INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`, `imagePath`)
+VALUES ('1', '2', '0', '香飘飘奶茶', '/products?keyword=香飘飘奶茶', 'http://img.shequ001.com/shop/images/pc/shenghuo/20141114/yilou_you_20141114.jpg');
+
+INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`)
+VALUES ('1', '2', '1', '脉动', '/products?keyword=薯片');
+INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`)
+VALUES ('1', '2', '1', '薯片', '/products?keyword=薯片');
+INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`)
+VALUES ('1', '2', '1', '好丽友', '/products?keyword=薯片');
+INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`)
+VALUES ('1', '2', '1', '奥利奥', '/products?keyword=薯片');
+INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`)
+VALUES ('1', '2', '1', '香飘飘', '/products?keyword=薯片');
+INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`)
+VALUES ('1', '2', '1', '饼干', '/products?keyword=薯片');
+
+INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`,`imagePath`)
+VALUES ('1', '2', '2', '防晒', '/products?keyword=奥利奥','http://img.shequ001.com/images/20141023/anqi.jpg');
+INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`,`imagePath`)
+VALUES ('1', '2', '2', '防晒', '/products?keyword=奥利奥','http://img.shequ001.com/images/20141023/maidong.jpg');
+INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`,`imagePath`)
+VALUES ('1', '2', '2', '防晒', '/products?keyword=奥利奥','http://img.shequ001.com/images/20141023/oliweilan.jpg');
+
+
+
+
+INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`, `imagePath`)
+VALUES ('1', '3', '0', '香飘飘奶茶', '/products?keyword=香飘飘奶茶', 'http://img.shequ001.com/images/20141023/maile.jpg');
+INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`, `imagePath`)
+VALUES ('1', '3', '0', '香飘飘奶茶', '/products?keyword=香飘飘奶茶', 'http://img.shequ001.com/shop/images/pc/shenghuo/20141114/sanlou_jiece_20141114.jpg');
+INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`, `imagePath`)
+VALUES ('1', '3', '0', '香飘飘奶茶', '/products?keyword=香飘飘奶茶', 'http://img.shequ001.com/shop/images/pc/shenghuo/20141114/yilou_you_20141114.jpg');
+
 INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`)
 VALUES ('1', '3', '1', '纸巾', '/products?keyword=薯片');
 INSERT INTO `layoutContents` (`layoutId`, `regionId`, `contentType`, `keyword`, `url`)
@@ -65,16 +94,45 @@ VALUES ('1', '3', '2', '消毒液', '/products?keyword=香飘飘奶茶', 'http:/
 
 
 CREATE TABLE SpecialProducts (
+    id INT NOT NULL auto_increment,
     regionId INT NOT NULL,
     productId INT NOT NULL,
     layoutId INT,
-    PRIMARY KEY(regionId,productId)
+    PRIMARY KEY(id)
 );
 
 INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '1', '1');
 INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1','1',  '2');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '1', '1');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1','1',  '2');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '1', '1');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1','1',  '2');
+
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '1', '7');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1','1',  '7');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '1', '7');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1','1',  '7');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '1', '7');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1','1',  '7');
+
+
 INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '2', '3');
 INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '2', '4');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '2', '3');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '2', '4');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '2', '3');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '2', '4');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '2', '3');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '2', '4');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '2', '3');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '2', '4');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '2', '3');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '2', '4');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '2', '3');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '2', '4');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '2', '3');
+INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '2', '4');
+
 INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '3', '5');
 INSERT INTO `SpecialProducts` (`layoutId`, `regionId`, `productId`) VALUES ('1', '3', '6');
 
