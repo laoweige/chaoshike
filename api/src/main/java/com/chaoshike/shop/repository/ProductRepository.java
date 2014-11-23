@@ -20,6 +20,9 @@ public interface ProductRepository {
     @SelectProvider(type = ProductSqlProvider.class, method = "search")
     List<Product> query(Map<String,Object> args);
 
+    @SelectProvider(type = ProductSqlProvider.class, method = "total")
+    List<Product> queryTotal(Map<String,Object> args);
+
     @Select("SELECT * FROM Products where productId=#{id}")
     Product detail(int id);
 

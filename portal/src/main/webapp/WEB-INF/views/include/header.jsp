@@ -184,6 +184,6 @@
 
     <div id="nav" class="supshop_cookies_menu">
         <div class="all-wrap">
-            <div id="main-nav"><ul><li><a href="/assets/shequ001.html" target="_blank">超市首页</a></li><li><a href="#?seller-gallery-2.html?scontent=t,1" target="_blank">天天特价</a></li><li><a href="#?seller-gallery-2-.html?scontent=n,%E8%B4%AD%E7%89%A9%E5%8D%A1" target="_blank">社区购物卡</a></li><li><a href="#?wg" target="_blank">精品超市</a></li><li><a href="#?seller-special-2-night.html" target="_blank">夜间店</a></li><li><a href="#?metro" target="_blank">麦德龙</a></li><li><a href="http://bj.shequ001.com/shop" target="_blank"></a></li></ul></div>
+            <div id="main-nav"><ul><li><a href="/index.html" target="_blank">超市首页</a></li><li><a href="#?seller-gallery-2.html?scontent=t,1" target="_blank">天天特价</a></li><li><a href="#?seller-gallery-2-.html?scontent=n,%E8%B4%AD%E7%89%A9%E5%8D%A1" target="_blank">社区购物卡</a></li><li><a href="#?wg" target="_blank">精品超市</a></li><li><a href="#?seller-special-2-night.html" target="_blank">夜间店</a></li><li><a href="#?metro" target="_blank">麦德龙</a></li><li><a href="http://bj.shequ001.com/shop" target="_blank"></a></li></ul></div>
         </div>
     </div>

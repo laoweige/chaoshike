@@ -29,6 +29,8 @@ public class ProductsApi {
         ProductJson result = new ProductJson(product.getProductId(),
                 product.getProductName(),product.getSummary(),product.getImagePath(),
                 product.getSalePrice(),product.getSalePrice());
+        result.setCategory(product.getCategoryId());
+        result.setChannelId(product.getChannelId());
         return result;
 
     }
@@ -36,6 +38,7 @@ public class ProductsApi {
     @GET
     @Produces(MediaType.APPLICATION_JSON + "; charset=utf-8")
     public List<ProductJson> search(@QueryParam("channel") int channel,
+                                    @QueryParam("classId") int classId,
                                      @QueryParam("category") int category,
                                      @QueryParam("keyword") String keyword,
                                      @QueryParam("order") String order,
@@ -46,9 +49,12 @@ public class ProductsApi {
 
         System.out.println(keyword);
         System.out.println(order);
-
+        System.out.println(channel);
+        System.out.println(category);
         if(channel!=0)
             args.put("channel",channel);
+        if(classId!=0)
+            args.put("classId",classId);
         if(category!=0)
             args.put("category",category);
         if(keyword!=null)
@@ -64,6 +70,7 @@ public class ProductsApi {
             args.put("start", start);
         }
 
+        System.out.println(args);
 
 
         List<Product> products = productRepository.query(args);

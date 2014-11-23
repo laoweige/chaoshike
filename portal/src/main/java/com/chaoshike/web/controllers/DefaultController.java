@@ -44,7 +44,12 @@ public class DefaultController {
         modelAndView.addObject("categories", categories);
         modelAndView.addObject("topRegion", layoutMap.get("topRegion"));
         modelAndView.addObject("regions", layoutMap.get("regions"));
+        Map<String,Object> current = new HashMap<>();
+        current.put("shop","qianxi");
+        modelAndView.addObject("current",current);
+
         modelAndView.setViewName("index");
+
         return modelAndView;
     }
 }

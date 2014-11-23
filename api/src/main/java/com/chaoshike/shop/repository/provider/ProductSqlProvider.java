@@ -14,9 +14,9 @@ public class ProductSqlProvider {
             sql+=" and channelId=";
             sql+=args.get("channel");
         }
-        if(args.containsKey("class")){
+        if(args.containsKey("classId")){
             sql+=" and classId=";
-            sql+=args.get("class");
+            sql+=args.get("classId");
         }
         if(args.containsKey("category")){
             sql+=" and categoryId=";
@@ -50,5 +50,9 @@ public class ProductSqlProvider {
         sql+=rows;
         System.out.println(sql);
         return sql;
+    }
+    public String total(Map<String, Object> args){
+        String sql = search(args);
+        return sql.replace("select * from ","select count(1) from ");
     }
 }

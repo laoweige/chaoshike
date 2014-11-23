@@ -11,8 +11,6 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,61 +26,85 @@ public class ApiClient {
         this.client = ClientBuilder.newClient(new ClientConfig());
     }
 
-    public Map<String,Object> getLayout(int id){
+    public Map<String, Object> getLayout(int id) {
 
-        Response response = client.target(baseUrl).path("layouts/"+id).request(MediaType.APPLICATION_JSON_TYPE)
+        Response response = client.target(baseUrl).path("layouts/" + id).request(MediaType.APPLICATION_JSON_TYPE)
                 .get();
 
-        Map<String,Object> entityMap = response.readEntity(Map.class);
+        Map<String, Object> entityMap = response.readEntity(Map.class);
         System.out.println(entityMap);
 
         return entityMap;
     }
 
-    public List<Map<String,Object>> getCategories(){
+    public List<Map<String, Object>> getCategories() {
 
         Response response = client.target(baseUrl).path("categories").request(MediaType.APPLICATION_JSON_TYPE)
                 .get();
 
-        List<Map<String,Object>> entityList = response.readEntity(List.class);
+        List<Map<String, Object>> entityList = response.readEntity(List.class);
 
         return entityList;
     }
 
-    public List<Map<String,Object>> getChannel(int id){
+    public List<Map<String, Object>> getChannel(int id) {
 
         Response response = client.target(baseUrl).path("categories").request(MediaType.APPLICATION_JSON_TYPE)
                 .get();
 
-        List<Map<String,Object>> entityList = response.readEntity(List.class);
+        List<Map<String, Object>> entityList = response.readEntity(List.class);
 
 
         return entityList;
     }
 
 
-    public List<Map<String,Object>> getCategories(String id){
+    public List<Map<String, Object>> getCategories(String id) {
 
-        Response response = client.target(baseUrl).path("categories/"+id).request(MediaType.APPLICATION_JSON_TYPE)
+        if (id.startsWith("p")) {
+            id = id.substring(1);
+        }
+        Response response = client.target(baseUrl).path("categories/" + id).request(MediaType.APPLICATION_JSON_TYPE)
                 .get();
 
-        List<Map<String,Object>> entityList = response.readEntity(List.class);
+        List<Map<String, Object>> entityList = response.readEntity(List.class);
 
         return entityList;
     }
 
-    public List<Map<String,Object>> getProducts(Map<String,String> args,int rows){
-        return getProducts(args,"createTime desc",1,rows);
+    public List<Map<String, Object>> getProducts(Map<String, String> args, int page, int rows) {
+        return getProducts(args, "createTime desc", page, rows);
     }
 
-    public List<Map<String,Object>> getProducts(Map<String,String> args,String order,int page,int pageSize){
+//    public int Count(Map<String, String> args){
+//        WebTarget webTarget = client.target(baseUrl);
+//        for (String key : args.keySet()) {
+//            webTarget = webTarget.queryParam(key, args.get(key));
+//        }
+//    }
+
+    public List<Map<String, Object>> getProducts(Map<String, String> args, int rows) {
+        return getProducts(args, "createTime desc", 1, rows);
+    }
+
+    public Map<String, Object> getProductBy(int id) {
+        Response response = client.target(baseUrl).path("products/" + id).request(MediaType.APPLICATION_JSON_TYPE)
+                .get();
+
+        Map<String, Object> entityMap = response.readEntity(Map.class);
+        System.out.println(entityMap);
+
+        return entityMap;
+    }
+
+    public List<Map<String, Object>> getProducts(Map<String, String> args, String order, int page, int pageSize) {
 
         WebTarget webTarget = client.target(baseUrl)
-                .queryParam("order",order)
-                .queryParam("page",page)
-                .queryParam("pageSize",pageSize);
-        for(String key:args.keySet()){
-            webTarget.queryParam(key,args.get(key));
+                .queryParam("order", order)
+                .queryParam("page", page)
+                .queryParam("pageSize", pageSize);
+        for (String key : args.keySet()) {
+            webTarget = webTarget.queryParam(key, args.get(key));
         }
         //webTarget.path("products");
         //webTarget.path("products");
@@ -96,9 +118,9 @@ public class ApiClient {
         System.out.println(response.getStatus());
         //System.out.println(response.getLocation().toString());
 
-        List<Map<String,Object>> entityList = response.readEntity(List.class);
+        List<Map<String, Object>> entityList = response.readEntity(List.class);
 
-        for(Object obj:entityList){
+        for (Object obj : entityList) {
             System.out.println(obj.getClass());
         }
 

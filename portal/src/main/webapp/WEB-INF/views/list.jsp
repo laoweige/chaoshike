@@ -22,7 +22,7 @@
     <script type="text/javascript">
         var jQuery=$.noConflict();
     </script>
-    <title>${current.name}_黔西网上超市</title>
+    <title>${current.navigate.name}_黔西网上超市</title>
     <meta name="keywords" content="店铺__中国社区电子化运营商">
     <meta name="description" content="店铺__中国社区电子化运营商">
     <link rel="icon" href="http://beijing.shequ001.com/app/b2c/staticsfavicon.ico" type="image/x-icon">
@@ -54,47 +54,7 @@
 
     <div id="container" class="all-wrap">
         <div id="sidebar" class="sidebar">
-            <!--<div id="cur_cat" class="section">
-                <div class="sec-t">
-                    <h3>当前分类</h3>
-                </div>
-                <div class="sec-c">
-                                    <h3 class="current"><a target="_blank" href="/gallery-7.html" title="生鲜食品">生鲜食品</a></h3>
-                                    <dl class="current">
-                        <dt><a href="/gallery-35.html" title="低温乳品">低温乳品</a></dt>
-                                        </dl>
-                                    <dl>
-                        <dt><a href="/gallery-36.html" title="海鲜水产">海鲜水产</a></dt>
-                                        </dl>
-                                    <dl>
-                        <dt><a href="/gallery-37.html" title="熟食菜品">熟食菜品</a></dt>
-                                        </dl>
-                                    <dl>
-                        <dt><a href="/gallery-38.html" title="其它">其它</a></dt>
-                                        </dl>
-                                    <dl>
-                        <dt><a href="/gallery-39.html" title="精品肉类">精品肉类</a></dt>
-                                        </dl>
-                                    <dl>
-                        <dt><a href="/gallery-40.html" title="蛋品">蛋品</a></dt>
-                                        </dl>
-                                    <dl>
-                        <dt><a href="/gallery-41.html" title="熏腊制品">熏腊制品</a></dt>
-                                        </dl>
-                                    <dl>
-                        <dt><a href="/gallery-42.html" title="速冻食品">速冻食品</a></dt>
-                                        </dl>
-                                    <dl>
-                        <dt><a href="/gallery-258.html" title="水果">水果</a></dt>
-                                        </dl>
-                                    <dl>
-                        <dt><a href="/gallery-259.html" title="蔬菜">蔬菜</a></dt>
-                                        </dl>
-                                    <dl>
-                        <dt><a href="/gallery-260.html" title="低温饮品">低温饮品</a></dt>
-                                        </dl>
-                                </div>
-            </div>-->
+
             <div id="recoment" class="section">
                 <div id="seller-recommend">
                     <div class="sec-t">
@@ -340,118 +300,23 @@
 
                 </script>
             </div>
+            <!--
             <div id="history" class="section">
-                <div class="sec-t">
-                    <h3>浏览该商品的用户还看了</h3>
-                </div>
-                <div class="sec-c">
-                    <ul id="box_5959"><li class="goods-item-h"><div class="thumb"><a href="detail.html#?-2-66933.html" target="_blank" title="伊利果粒优酸乳草莓粒240ml" inner_img="http://img.shequ001.com/shop/images/goods/20130808/223181544.jpg?0#h" gid="66933"><img src="/assets/images/223181544.jpg" width="70" height="70"></a></div><div class="des"><h5 class="g-name"><a href="detail.html#?-2-66933.html" target="_blank" title="伊利果粒优酸乳草莓粒240ml">伊利果粒优酸乳草莓粒240ml</a></h5><p class="price">￥3.50</p></div></li><li class="goods-item-h"><div class="thumb"><a href="detail.html#?-106-1057683.html" target="_blank" title="脆宝（冰翡翠）香瓜3kg" inner_img="http://img.shequ001.com/shop/images/goods/20140423/cd184e800c3dc554.jpg?1398235748#h" gid="1057683"><img src="/assets/images/cd184e800c3dc554.jpg" width="70" height="70"></a></div><div class="des"><h5 class="g-name"><a href="detail.html#?-106-1057683.html" target="_blank" title="脆宝（冰翡翠）香瓜3kg">脆宝（冰翡翠）香瓜3kg</a></h5><p class="price">￥78.00</p></div></li><li class="goods-item-h"><div class="thumb"><a href="detail.html#?-18-895972.html" target="_blank" title="孩儿面大王儿童青苹香波270ml" inner_img="http://img.shequ001.com/shop/images/goods/20130627/JLF6920177944027.jpg?0#h" gid="895972"><img src="/assets/images/JLF6920177944027.jpg" width="70" height="70"></a></div><div class="des"><h5 class="g-name"><a href="detail.html#?-18-895972.html" target="_blank" title="孩儿面大王儿童青苹香波270ml">孩儿面大王儿童青苹香波270ml</a></h5><p class="price">￥16.60</p></div></li></ul>
-                </div>
 
-
-                <script type="text/javascript">
-                    withBrowserStore(function(browserStore){
-                        var box=$('box_5959');
-                        browserStore.get('history',function(v){
-                            v=JSON.decode(v);
-                            if(!v||!v.length)return;
-                            var html='';
-                            var template = '<li class="goods-item-h">';
-                            template+='<div class="thumb">';
-                            template+= '<a href="/seller-product-{sellerId}-{goodsId}.html" target="_blank" title="{goodsName}" inner_img="{goodsImg}" gid="{goodsId}">'.replace('index-','');
-                            template+= '</a>';
-                            template+= '</div><div class="des">';
-                            template+='<h5 class="g-name"><a href="/seller-product-{sellerId}-{goodsId}.html" target="_blank" title="{goodsName}">{goodsName}</a></h5><p class="price">{goodsPrice}</p></div></div></li>'.replace('index-','');
-
-                            var max=Math.min(v.length,3);
-
-                            if(v.length>1)
-                                v.sort(function(a, b){
-                                    return b['sortTime']-a['sortTime'];
-                                });
-
-                            v.each(function(goods,index){
-                                var vt = (+new Date() - goods['sortTime']);
-                                vt = Math.round(vt/(60*1000))+'分钟前浏览过:';
-                                if(vt.toInt()>=60){
-                                    vt = Math.round(vt.toInt()/60)+'小时前浏览过:';
-                                    if(vt.toInt()>23){
-                                        vt = Math.round(vt.toInt()/24)+'天前浏览过:';
-                                        if(vt.toInt()>3){
-                                            vt = new Date(goods['viewTime']).toLocaleString()+'浏览过:';
-                                        }
-                                    }
-                                };
-                                if(!vt.toInt()){vt='刚才浏览了:'}
-                                goods['viewTime'] = vt;
-                                if(index<max)
-                                    html += template.substitute(goods);
-                            });
-
-                            $('box_5959').set('html',html);
-
-                            box.getElements('.thumb').each(function(i){
-                                var imga=i.getElement('a').set('text','正在载入...');
-                                var imgsrc=imga.get('inner_img');
-                                new Asset.image(imgsrc,{
-                                    onload:function(){
-                                        var img=$(this);
-                                        if(!img.get('src')){
-                                            loadImg(imga,img,v,max);
-                                        }else{
-                                            if(img.$e)return;
-                                            img.zoomImg(70,70);
-                                            img.inject(imga.empty());
-                                            img.$e=true;
-                                        }
-                                    },
-                                    onerror:function(){
-                                        var img=$(this);
-                                        loadImg(imga,img,v,max);
-                                    }
-                                });
-                            });
-                        });
-
-                        function loadImg(imga,img,v,max){
-                            imga.set('text','正在载入...');
-                            var gid = imga.get('gid');
-                            new Request.JSON({url:"/product-picsJson.html",
-                                onComplete:function(data){
-                                    new Asset.image(data,{onload:function(){
-                                        var img=$(this);
-                                        if(img.$e)return;
-                                        img.zoomImg(70,70);
-                                        img.inject(imga.empty());
-                                        img.$e=true;
-                                    },onerror:function(){
-                                        imga.destroy();
-                                    }});
-
-                                    v.map(function(goods,index){
-                                        if(index<max&&goods['goodsId']==gid)
-                                            return goods['goodsImg']=data;
-                                    });
-
-                                    browserStore.set('history',JSON.encode(v));
-                                }}).get({'gids':gid});
-                        }
-
-                    });
-                </script>
             </div>
+            -->
         </div>
         <div id="col-main">
             <div id="catgory-path">
 
                 <dl class="leader">
                     <dt>
-                        <b></b><a href="/product/category-c${navigation[0].id}.do" title="${navigation[0].name}">${navigation[0].name}</a><i></i>
+                        <b></b><a href="/${current.shop}/c-c${navigation[0].id}.html" title="${navigation[0].name}">${navigation[0].name}</a><i></i>
                     </dt>
                     <dd>
                         <div class="pop">
                             <c:forEach var="category" items="${navigation[0].children}">
-                                <a href="/product/category-${category.id}.do" title="${category.name}">${category.name}</a>
+                                <a href="/${current.shop}/c-p${category.id}.html" title="${category.name}">${category.name}</a>
                             </c:forEach>
                         </div>
                     </dd>
@@ -462,12 +327,12 @@
 
                     <c:if test="${status.index==1}">
                     <dt>
-                        <a href="/product/category-${category.id}.do" title="${category.name}">${category.name}</a><i></i>
+                        <a href="/${current.shop}/c-p${category.id}.html" title="${category.name}">${category.name}</a><i></i>
                     </dt>
                     <dd>
                         <div class="pop">
                             <c:forEach var="subCategory" items="${category.children}">
-                                <a href="/product/category-${subCategory.id}.do" title="${subCategory.name}">${subCategory.name}</a>
+                                <a href="/${current.shop}/c-${subCategory.id}.html" title="${subCategory.name}">${subCategory.name}</a>
                             </c:forEach>
                         </div>
                     </dd>
@@ -488,44 +353,7 @@
                 <!-- 商品列表开始 -->
                 <div class="page-maincontent">
                     <!-- 筛选区 -->
-                    <div id="filter_container" class="filter-container">
-                        <div class="filter-title clearfix">
-                            <h3>商品筛选</h3>
-                            <div class="gallery-total-info">
-                                (共<b class="op-search-result">90</b>件商品)
-                            </div>
-                            <div class="filter-clean"><a href="javascript:location.reload();Memory.clean('gallery.filter');">重置筛选项<i class="icon">'</i></a></div>
-                        </div>
-                        <!-- 筛选条件 -->
-                        <div id="gallery_filter" class="gallery-filter">
-                            <div id="filter_selected" class="filter-selected clearfix">
-                                <dl class="filter-selected-list clearfix">
-                                    <dt class="filter-selected-title">您已选择：</dt>
-                                    <dd class="filter-selected-values">
-                                    </dd>
-                                </dl>
-                            </div>
-                            <div id="filter_lists" class="filter-lists-container">
-                                <!-- 分类 -->
-                                <dl class="filter-entries clearfix">
-                                    <dt class="filter-entries-label">分类：</dt>
-                                    <dd class="filter-entries-values">
-                                        <span class="filter-item"><a href="list.html#?-2-81.html?" class="handle action-cat-filter">黄油乳酪</a></span>
-                                        <span class="filter-item"><a href="list.html#?-2-82.html?" class="handle action-cat-filter">鲜奶</a></span>
-                                        <span class="filter-item"><a href="list.html#?-2-83.html?" class="handle action-cat-filter">酸奶</a></span>
-                                        <span class="filter-item"><a href="list.html#?-2-84.html?" class="handle action-cat-filter">冰激凌</a></span>
-                                    </dd>
-                                </dl>
 
-                                <!-- 品牌 -->
-                                <!-- 价格-->
-                                <!-- 扩展属性 -->
-                                <!-- 规格 -->
-                            </div>
-
-                            <!-- 促销标签 -->
-                        </div>
-                    </div>
                     <!-- 排序状态条 -->
                     <div id="gallery_sortbar" class="gallery-sortbar clearfix">
                         <div class="gallery-sort">
@@ -554,8 +382,8 @@
                         <label for="">仅显示有货</label>
                               </div> -->
                         <div class="mini-pageview">
-                            <span class="page-count"><span class="page-current">1</span>/<span class="page-total">5</span></span>
-                            <span class="page-action"><a href="javascript:void(0);" class="flip prev over"><i class="icon">4</i></a><a href="javascript:void(0);" class="flip next"><i class="icon">5</i></a></span>
+                            <span class="page-count"><span class="page-current">${current.page}</span>/<span class="page-total">5</span></span>
+                            <span class="page-action"><a href="${current.path}&page=2" class="flip prev over"><i class="icon">2</i></a><a href="${current.path}&page=3" class="flip next"><i class="icon">3</i></a></span>
                         </div>
 
                     </div>
@@ -568,7 +396,7 @@
                                     <div class="wrap">
                                         <div class="inner">
                                             <div class="goods-pic">
-                                                <a href="detail.html#?-2-70172.html" target="_blank"><img class="action-goods-img" alt="三元老北京凝固型酸牛奶原味180g" src="/assets/images/217075355.jpg"></a>
+                                                <a href="/${current.shop}/product-${product.id}.html" target="_blank"><img class="action-goods-img" alt="${product.name}" src="${product.image}"></a>
                                             </div>
                                             <div class="goods-thumbs">
                                                 <div class="thumb-scroll">
@@ -584,7 +412,7 @@
                                                     <ins class="price">￥3.80</ins>
                                                     <del class="price">￥4.37</del>
                                                 </div>
-                                                <h3 class="goods-name"><a href="detail.html#?-2-70172.html" target="_blank">${product.name}</a></h3>
+                                                <h3 class="goods-name"><a href="/${current.shop}/product-${product.id}.html" target="_blank">${product.name}</a></h3>
                                                 <div class="goods-promotion">    </div>
                                             </div>
                                             <div class="goods-action">
@@ -613,7 +441,15 @@
                                 </c:forEach>
                             </ul>
                         </div>
-                        <div class="pageview"><span class="flip prev over"><i class="ico prev">‹</i></span><a href="#?seller-ajax_get_goods-2.html" class="flip active">1</a><a href="#?seller-ajax_get_goods-2.html" class="flip">2</a><a href="#?seller-ajax_get_goods-2.html" class="flip">3</a><a href="#?seller-ajax_get_goods-2.html" class="flip">4</a><a href="#?seller-ajax_get_goods-2.html" class="flip">5</a><a href="#?seller-ajax_get_goods-2.html" class="flip next"><i class="ico next">›</i></a></div>
+                        <div class="pageview">
+                        <span class="flip prev over">
+                        <i class="ico prev">‹</i></span>
+                        <a href="${current.path}" class="flip<c:if test="${current.page==1}"> active</c:if>">1</a>
+                        <a href="${current.path}&page=2" class="flip<c:if test="${current.page==2}"> active</c:if>">2</a>
+                        <a href="${current.path}&page=3" class="flip<c:if test="${current.page==3}"> active</c:if>">3</a>
+
+                        <a href="#?seller-ajax_get_goods-2.html" class="flip next">
+                        <i class="ico next">›</i></a></div>
                     </div>
                     <div id="product_notify" class="product-notify" style="display:none;">
                         <p class="desc">该货品暂时缺货，请在下面输入您的邮箱地址或手机号码，当我们有现货供应时，我们会发送邮件通知您！</p>
@@ -905,17 +741,6 @@
                     },
                     'change:relay(.action-gtags,.action-available)':function(e) {
                         Query.filter(getData());
-                    },
-                    'click:relay(a.flip:not(.over))':function(e){
-                        e.preventDefault();
-                        var self = this;
-                        Query.filter(getData(this), function(e){
-                            self.getSiblings('.over').removeClass('over');
-                            var page = getFlipPage();
-                            var parent = self.getParent();
-                            if(page <= 1) parent.getElement('.prev').addClass('over');
-                            else if(page >= getPage().total) parent.getElement('.next').addClass('over');
-                        });
                     }
                 });
                 Module.gallery.show.addEvents({
@@ -1004,14 +829,6 @@
                         }
                         this.addClass('stat-compared');
                         foldCompare(container, 3000);
-                    },
-                    'click:relay(a.flip:not(.over))':function(e){
-                        e.preventDefault();
-                        Query.filter(getData(this), function(e){
-                            try{
-                                new Fx.Scroll(document.body, {link:'cancel', duration: 0}).toElementEdge(Module.gallery.sortbar);
-                            }catch(e){}
-                        });
                     }
                 });
 

@@ -7,7 +7,7 @@
         <dl>
             <dd class="market_cookies_main_left_item_ic market_cookies_main_left_item_ic_i${channel.id} market_ga_cookies_vector" content="market_cookies_main_left_item_ic_i${channel.id}_current"></dd>
             <dd class="market_cookies_main_left_item_class">
-                <a href="#?seller-gallery-2-7.html">${channel.name }</a>
+                <a href="/${current.shop}/c-c${channel.id}.html">${channel.name }</a>
                 <!-- <p>&nbsp;</p> -->
             </dd>
             <dt class="common_clear"></dt>
@@ -21,11 +21,11 @@
                                 <c:forEach var="category" items="${channel.children}">
                                 <dl>
                                     <dt>
-                                        <a href="list.html#?-2-35.html" title="低温乳品">${category.name }</a>
+                                        <a href="/${current.shop}/c-p${category.id}.html" title="${category.name }">${category.name }</a>
                                     </dt>
                                     <dd>
                                         <c:forEach var="subCategory" items="${category.children}">
-                                        <a href="list.html#?-2-81.html" title="黄油乳酪">${subCategory.name }</a>
+                                        <a href="/${current.shop}/c-${subCategory.id}.html" title="${subCategory.name }">${subCategory.name }</a>
                                         </c:forEach>
                                     </dd>
                                 </dl>

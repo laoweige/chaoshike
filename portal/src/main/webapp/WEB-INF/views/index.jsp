@@ -148,15 +148,15 @@
                                                 <c:forEach var="product" items="${category.products}" varStatus="status">
                                                 <li class="slide-inner-goods">
                                                     <div class="wrap">
-                                                        <a href="#?seller-product-2-69716.html" target="_blank" title="康师傅香辣牛肉方便面" class="thumb">
+                                                        <a href="/${current.shop}/product-${product.id}.html" target="_blank" title="${product.name}" class="thumb">
                                                             <img src="${product.image}" alt="康师傅香辣牛肉方便面">
                                                         </a>
                                                         <div class="des">
                                                             <h5 class="g-name">
-                                                                <a href="#?seller-product-2-69716.html" target="_blank" title="康师傅香辣牛肉方便面">${product.name}</a>
+                                                                <a href="/${current.shop}/product-${product.id}.html" target="_blank" title="${product.name}">${product.name}</a>
                                                             </h5>
                                                             <p class="price">￥${product.salePrice}</p>
-                                                            <a href="#?seller-product-2-69716.html" target="_blank" class="com-btn">立即抢购</a>
+                                                            <a href="/${current.shop}/product-${product.id}.html" target="_blank" class="com-btn">立即抢购</a>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -249,12 +249,12 @@
                                             <li class="fl-g-item">
                                                 <div class="inner">
                                                     <div class="thumb">
-                                                        <a href="detail.html#?-2-75668.html" target="_blank" title="雀巢优活饮用水330ml*12">
+                                                        <a href="/${current.shop}/product-${product.id}.html" target="_blank" title="${product.name}">
                                                             <img src="${product.image}" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="des">
-                                                        <h5 class="g-name"><a href="detail.html#?-2-75668.html" target="_blank" title="雀巢优活饮用水330ml*12">${product.name}</a></h5>
+                                                        <h5 class="g-name"><a href="/${current.shop}/product-${product.id}.html" target="_blank" title="${product.name}">${product.name}</a></h5>
                                                         <p class="price">￥${product.salePrice}</p>
                                                     </div>
                                                 </div>
