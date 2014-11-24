@@ -17,8 +17,6 @@ INSERT INTO Users (name,password,email,mobile,status,integral,createTime,loginTi
 VALUES('guoxuewen','123456','gexuewen@163.com','13910171111',0,20,'2014-10-4','2014-10-4');
 
 
-
-
 CREATE TABLE Registers (
     id INT NOT NULL auto_increment,
     mobile VARCHAR(50) NOT NULL,
