@@ -24,3 +24,4 @@ images/sprite-*.png
 zhaopin.log
 zhaopin.log.*
 docs/~$*.xlsx
+gradle.properties

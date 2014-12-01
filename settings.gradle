@@ -1,1 +1,1 @@
-include 'component', 'api', 'admin', 'android','portal'
+include 'component', 'api', 'admin','portal','m'
