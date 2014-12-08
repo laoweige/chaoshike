@@ -53,6 +53,7 @@ public class LayoutApi {
         appLayout.setRegions(new ArrayList<AppRegionJson>());
         for(RegionJson region:layout.getRegions()){
             AppRegionJson arj = new AppRegionJson();
+            arj.setId(region.getId());
             arj.setCategories(region.getCategories());
             arj.setName(region.getName());
             if(region.getAds().size()>0) {

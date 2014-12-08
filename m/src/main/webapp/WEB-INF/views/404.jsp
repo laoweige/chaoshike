@@ -1,34 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@ taglib uri="http://www.zhaopin.com/taglib" prefix="zp" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="zh-cn">
+<!DOCTYPE html>
+<html>
 <head>
-    <title>404 页面或目录无法找到 - 智联招聘自助产品中心</title>
-    <jsp:include page="./include/resource.jsp"></jsp:include>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>-</title>
+    <link rel="stylesheet" href="/phone/jquery.mobile-1.4.5.min.css" />
+    <script type="text/javascript" src="/phone/jquery.min.js"></script>
+    <script type="text/javascript" src="/phone/jquery.mobile-1.4.5.min.js"></script>
+
 </head>
-<body class="page-404">
-
-<jsp:include page="./include/menu.jsp"/>
-
-<div class="g-container">
-    <div class="g-main g-cont">
-        <div class="g-md-box">
-            <div class="bd">
-                <i class="error-icon"></i>
-
-                <p>对不起，您要访问的页面暂时没有找到</p>
-                <div class="g-md-btncont">
-                    <a href="javascript:history.back()" class="g-btn btn-prev">返回上一页</a>
-                    <a href="./../../products.do" class="g-btn btn-prev">返回产品列表</a>
-                </div>
-            </div>
-        </div>
+<body>
+        <div data-role="page">
+        <jsp:include page="./include/header.jsp"></jsp:include>
+    <div data-role="content">
+        错误页面！
     </div>
-</div>
 
 <jsp:include page="./include/footer.jsp"></jsp:include>
-
+</div>
 </body>
 </html>

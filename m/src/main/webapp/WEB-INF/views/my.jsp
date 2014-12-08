@@ -14,10 +14,7 @@
         <div data-role="page">
         <jsp:include page="./include/header.jsp"></jsp:include>
     <div data-role="content">
-        <div class="ui-body-a ui-body">
-            <a href="index.mob" class="ui-btn ui-corner-all ui-btn-inline ui-icon-back" data-rel="back">返回</a>
-          
-        </div>
+        my
     </div>
 
 <jsp:include page="./include/footer.jsp"></jsp:include>

@@ -8,16 +8,13 @@
     <link rel="stylesheet" href="/phone/jquery.mobile-1.4.5.min.css" />
     <script type="text/javascript" src="/phone/jquery.min.js"></script>
     <script type="text/javascript" src="/phone/jquery.mobile-1.4.5.min.js"></script>
-
+    <sc
 </head>
 <body>
         <div data-role="page">
         <jsp:include page="./include/header.jsp"></jsp:include>
     <div data-role="content">
-        <div class="ui-body-a ui-body">
-            <a href="index.mob" class="ui-btn ui-corner-all ui-btn-inline ui-icon-back" data-rel="back">返回</a>
-          
-        </div>
+        car
     </div>
 
 <jsp:include page="./include/footer.jsp"></jsp:include>

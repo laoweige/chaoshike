@@ -396,7 +396,8 @@
                                     <div class="wrap">
                                         <div class="inner">
                                             <div class="goods-pic">
-                                                <a href="/${current.shop}/product-${product.id}.html" target="_blank"><img class="action-goods-img" alt="${product.name}" src="${product.image}"></a>
+                                                <a href="/${current.shop}/product-${product.id}.html" target="_blank">
+                                                <img class="action-goods-img" alt="${product.name}" src="${product.image}"></a>
                                             </div>
                                             <div class="goods-thumbs">
                                                 <div class="thumb-scroll">
@@ -412,7 +413,9 @@
                                                     <ins class="price">￥3.80</ins>
                                                     <del class="price">￥4.37</del>
                                                 </div>
-                                                <h3 class="goods-name"><a href="/${current.shop}/product-${product.id}.html" target="_blank">${product.name}</a></h3>
+                                                <h3 class="goods-name">
+                                                <a href="/${current.shop}/product-${product.id}.html" target="_blank">
+                                                ${product.name}</a></h3>
                                                 <div class="goods-promotion">    </div>
                                             </div>
                                             <div class="goods-action">

@@ -8,6 +8,17 @@ import java.util.List;
  * Created by weizhigang on 14-11-16.
  */
 public class AppRegionJson {
+
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     private String name;
     private List<CategoryJson> categories;
 
