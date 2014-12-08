@@ -22,6 +22,7 @@ dependencies {
     compile project(':component')
 //    runtime fileTree('../lib')
     runtime "org.apache.commons:commons-dbcp2:2.0.1"
+
     testCompile "org.glassfish.jersey.test-framework:jersey-test-framework-core:$jerseyVersion"
     testCompile "org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-grizzly2:$jerseyVersion"
     testCompile 'org.flywaydb:flyway-core:3.0'
@@ -41,8 +42,8 @@ ext {
         adDbPassword = '123456'
     } else {
         adDbName = 'chaoshikedb'
-//        adDbUrl = "jdbc:mysql://127.0.0.1:3306/"
-        adDbUrl = "jdbc:mysql://172.17.1.188:3306/"
+        adDbUrl = "jdbc:mysql://127.0.0.1:3306/"
+//        adDbUrl = "jdbc:mysql://172.17.1.188:3306/"
         adDbUsername = 'root'
         adDbPassword = 'wzg123'
     }

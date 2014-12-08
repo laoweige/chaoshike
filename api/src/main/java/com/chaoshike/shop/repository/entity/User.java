@@ -7,18 +7,42 @@ public class User {
     private String name;
     private String password;
     private String email;
+    private int integral;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", integral=" + integral +
+                ", mobile='" + mobile + '\'' +
+                ", status=" + status +
+                ", createTime=" + createTime +
+                ", loginTime=" + loginTime +
+                '}';
+    }
+
+    public int getIntegral() {
+        return integral;
+    }
+
+    public void setIntegral(int integral) {
+        this.integral = integral;
+    }
 
     public User() {
     }
 
     private String mobile;
 
-    public User(int id, String name, String password, String mobile, int status) {
-        this.id = id;
-        this.name = name;
+    public User(String password, String mobile) {
         this.password = password;
+        this.name = mobile;
         this.mobile = mobile;
-        this.status = status;
+        this.status = 0;
+        this.email = "";
     }
 
     public int getId() {
@@ -87,6 +111,6 @@ public class User {
     }
 
     private int status;
-    private Date createTime;
-    private Date loginTime;
+    private Date createTime = new Date();
+    private Date loginTime = new Date();
 }

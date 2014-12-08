@@ -5,7 +5,7 @@ CREATE TABLE ShoppingCart (
     productId INT NOT NULL,
     needNum INT NOT NULL,
     status INT NOT NULL,
-    createTime DATE,
+    createTime DATETIME,
     PRIMARY KEY(id)
 );
 
@@ -15,7 +15,7 @@ CREATE TABLE Orders (
     couponId INT,
     integral INT,
     status INT NOT NULL,
-    createTime DATE,
+    createTime DATETIME,
     totalPrice FLOAT,
     actualPrice FLOAT NOT NULL,
     deliverAddress VARCHAR(1000) NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE invoices(
     invoiceValue FLOAT,
     companyName VARCHAR(1000) NOT NULL,
     userName  VARCHAR(10) NOT NULL,
-    createTime DATE,
+    createTime DATETIME,
     PRIMARY KEY(invoiceId)
 );
 
@@ -54,6 +54,6 @@ CREATE TABLE Coupons(
     summary VARCHAR(100) NOT NULL,
     useLimit VARCHAR(200) NOT NULL,
     status INT NOT NULL,
-    createTime DATE,
+    createTime DATETIME,
     PRIMARY KEY(couponId)
 )

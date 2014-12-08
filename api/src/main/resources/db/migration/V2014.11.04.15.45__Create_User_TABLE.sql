@@ -6,8 +6,8 @@ CREATE TABLE Users (
     mobile VARCHAR(50) NOT NULL,
     integral INT NOT NULL,
     status INT NOT NULL,
-    createTime DATE,
-    loginTime DATE,
+    createTime DATETIME,
+    loginTime DATETIME,
     PRIMARY KEY(id)
 );
 
@@ -30,8 +30,8 @@ CREATE TABLE LoginToken(
     UUID VARCHAR(50) NOT NULL,
     token VARCHAR(50) NOT NULL,
     platform int NOT NULL,
-    expireTime DATE,
-    createTime DATE,
+    expireTime DATETIME,
+    createTime DATETIME,
     PRIMARY KEY(id)
 );
 
@@ -51,7 +51,7 @@ CREATE TABLE IntegralRate(
     money FLOAT,
     city INT,
     isDefault bit,
-    createTime DATE,
+    createTime DATETIME,
     PRIMARY KEY(id)
 );
 
@@ -60,7 +60,7 @@ CREATE TABLE IntegralLog(
     userName VARCHAR(10) NOT NULL,
     num INT,
     summary VARCHAR(200) NOT NULL,
-    createTime DATE,
+    createTime DATETIME,
     PRIMARY KEY(id)
 );
 

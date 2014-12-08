@@ -81,7 +81,7 @@ allprojects {
         compile "joda-time:joda-time:$jodaVersion"
         compile 'javax.servlet:javax.servlet-api:3.0.1'
         compile 'javax.servlet:jstl:1.2'
-        compile "org.apache.lucene:lucene-analyzers-common:$luceneVersion"
+//        compile "org.apache.lucene:lucene-analyzers-common:$luceneVersion"
         testCompile "junit:junit:$junitVersion"
         testCompile "org.mockito:mockito-all:$mockitoVersion"
         testCompile("org.springframework:spring-test:$springVersion") { exclude module: "junit" }

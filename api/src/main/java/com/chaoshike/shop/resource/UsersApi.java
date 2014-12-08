@@ -24,11 +24,11 @@ public class UsersApi {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<UserJson> all() {
-        List<User> users =  userRepository.All();
+//        List<User> users =  userRepository.All();
         List<UserJson> resultUsers = new ArrayList<>();
-        for(User user:users){
-            resultUsers.add(new UserJson(user.getId(),user.getName(),user.getMobile()));
-        }
+//        for(User user:users){
+//            resultUsers.add(new UserJson(user.getId(),user.getName(),user.getMobile()));
+//        }
         return resultUsers;
     }
 

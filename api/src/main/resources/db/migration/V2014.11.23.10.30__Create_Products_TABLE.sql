@@ -2,7 +2,7 @@ CREATE TABLE Shops (
     shopId INT NOT NULL auto_increment,
     shopName VARCHAR(50) NOT NULL,
     status INT NOT NULL,
-    createTime DATE,
+    createTime DATETIME,
     PRIMARY KEY(shopId)
 );
 
@@ -25,7 +25,7 @@ CREATE TABLE Products (
     saleNum     INT,
     commentNum  INT,
     status INT NOT NULL,
-    createTime DATE,
+    createTime DATETIME,
     PRIMARY KEY(productId)
 );
 

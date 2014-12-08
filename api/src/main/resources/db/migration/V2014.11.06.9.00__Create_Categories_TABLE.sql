@@ -3,7 +3,7 @@ CREATE TABLE Channels (
     channelName VARCHAR(50) NOT NULL,
     alias VARCHAR(50),
     status INT NOT NULL,
-    createTime DATE,
+    createTime DATETIME,
     PRIMARY KEY(channelId)
 );
 
@@ -12,7 +12,7 @@ CREATE TABLE Brands (
     brandName VARCHAR(50) NOT NULL,
     alias VARCHAR(50),
     status INT NOT NULL,
-    createTime DATE,
+    createTime DATETIME,
     PRIMARY KEY(brandId)
 );
 
@@ -23,7 +23,7 @@ CREATE TABLE Categories (
     alias VARCHAR(50),
     status INT NOT NULL,
     parentId INT NOT NULL,
-    createTime DATE,
+    createTime DATETIME,
     PRIMARY KEY(categoryId)
 );
 
