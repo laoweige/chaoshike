@@ -34,7 +34,7 @@
 		<div class="sliderBox">
 			<ul class="scroller slide_ul">
 						<li class="item">
-						<img src=${product.image} alt="${product.name}" onerror="this.src='http://script.suning.cn/images/ShoppingArea/Common/blankbg.gif?v=2.4.4'">
+						<img src="${product.image}" alt="${product.name}" onerror="this.src='http://script.suning.cn/images/ShoppingArea/Common/blankbg.gif?v=2.4.4'">
 						</li>
 						<li class="item">
 						<img data-src=http://image4.suning.cn/b2c/catentries/000000000103187235_2_400x400.jpg alt="先锋（SINGFUN) 油汀 DS9411 11片 取暖器 电暖器" onerror="this.src='http://script.suning.cn/images/ShoppingArea/Common/blankbg.gif?v=2.4.4'">

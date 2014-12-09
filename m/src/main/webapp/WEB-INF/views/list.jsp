@@ -19,6 +19,7 @@
 		var oneload2 = 1;
 	</script>
 	<script src="/phone/jquery.min.js"></script>
+	<script src="/phone/jquery.tmpl.js"></script>
 	<script src="/phone/wap/product/script/base.js?v=2.4.4"></script>
 	<script src="/phone/wap/product/script/waputils.js?v=2.4.4"></script>
 	<script type="text/javascript" src="/phone/wap/product/script/sntouch.js?v=2.4.4"></script>
@@ -105,9 +106,40 @@ document.onkeydown =function(event){
 <!-- loading 效果 -->
 
 <div id="more_load" class="tc click-load-more">
-	<a href="javascript:void(0);">点击加载更多</a>
+	<a href="javascript:void(0);" id="nextPage">点击加载更多</a>
 </div>
+<script id="productItem" type="text/x-jquery-tmpl">
+    {{each(i,product) products}}
+    <li id="p{{= product.id}}" name="/spfs/querySalesShow_103187235_1_9173___WAP_.html?orderInfo=" app-url="http://www.suning.com/emall/sprdpromon_10052_10051_3456874_9173_.html" app-data="">
+        <a href="/product_{{= product.id}}.html">
+            <div class="pro-list wbox">
+                <div class="pro-img"><img src="{{= product.image}}" alt="{{= product.name}}"></div>
+                <div class="pro-info wbox-flex">
+                    <h3>{{= product.name}}</h3>
+                    <p class="desc">{{= product.summary}}</p>
+                    <div class="priceInfo">
+                        <div id="sp3456874" class="m-price">
+                            <span id="sprice3456874" class="price" >
+                                <em>&yen;</em>
+                                {{= product.salePrice}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+    {{/each}}
+</script>
 
+<script type="text/javascript">
+    $("#nextPage").click(function(){
+        var eachData = { products: [{ id:1000,name: 'jerry',image:'http://image2.suning.cn/b2c/catentries/000000000103187235_1_400x400.jpg',summary:'shuang 11',salePrice:1.5 },
+         {id:1001, name: '产品名字',image:'http://image2.suning.cn/b2c/catentries/000000000103187235_1_400x400.jpg',summary:'shuang 11',salePrice:2.6 }] };
+        $("#productItem").tmpl(eachData).appendTo('#productsList');
+    })
+　　
+</script>
 
 <jsp:include page="./include/footer.jsp"></jsp:include>
 </body>
