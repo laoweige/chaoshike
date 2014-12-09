@@ -78,6 +78,12 @@ public class DefaultController {
         ModelAndView modelAndView = new ModelAndView();
         return modelAndView;
     }
+    @RequestMapping(value = "login",method = RequestMethod.GET)
+    public ModelAndView gologin() throws Exception {
+        System.out.println("#######goCategorye######");
+        ModelAndView modelAndView = new ModelAndView();
+        return modelAndView;
+    }
     @RequestMapping(value = "products/c-{category}",method = RequestMethod.GET)
     public ModelAndView goProductList(@PathVariable("category") String category,
                                       HttpServletRequest request) throws Exception {

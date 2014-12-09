@@ -4,7 +4,7 @@
 	<div class="tr"><a href="javascript:void(0);" class="backTop" onclick="$(window).scrollTop(0);">回顶部</a></div>
 	<ul class="list-ui-index foot-list tc">
 		<li>
-			<a  href="javascript:void(0)" id="footerLogin"  class="foot1">登录</a>
+			<a  href="/login.html" id="footerLogin"  class="foot1">登录</a>
 			<a  href="javascript:void(0)" id="footerRegister"  class="foot2">注册</a>
 			<a  href="javascript:void(0)" id="footerUserName" class="foot1" style="display:none">当前账户 : <span class="a"></span></a>
 			<a  href="javascript:void(0)" id="footerLogout" style="display:none;padding-left:5px;" >注销</a>
